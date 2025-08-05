@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
@@ -19,7 +19,7 @@ jobs:
         run: npm run build
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0 # ← Исправленная версия
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0 # ← Рабочая стабильная версия
         with:
           server: 188.225.23.151
           username: snapget
