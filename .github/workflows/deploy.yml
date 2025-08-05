@@ -6,32 +6,48 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2 # Для сравнения коммитов
 
-      # Определяем изменения в assets/ И Components/
-      - name: Check for JS/CSS changes
-        id: check-resources
+      # Устанавливаем только Node.js (PHP не требуется)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18 # Используем LTS-версию для стабильности
+
+      # Кэшируем зависимости для ускорения
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+      # Устанавливаем зависимости (пропускаем предупреждения)
+      - name: Install dependencies
         run: |
-          changed_assets=$(git diff --name-only HEAD^ HEAD -- assets/)
-          changed_components=$(git diff --name-only HEAD^ HEAD -- Components/*/*.{js,scss})
-          if [ -n "$changed_assets" ] || [ -n "$changed_components" ]; then
+          npm ci --no-audit --ignore-scripts
+          npm fund --no-audit
+
+      # Определяем изменения в ресурсах
+      - name: Check for asset changes
+        id: check-assets
+        run: |
+          changed_files=$(git diff --name-only HEAD^ HEAD -- assets/ Components/)
+          if [ -n "$changed_files" ]; then
             echo "needs_build=true" >> $GITHUB_OUTPUT
-            echo "Измененные файлы:"
-            echo "$changed_assets"
-            echo "$changed_components"
+            echo "Changed files detected:"
+            echo "$changed_files"
           fi
 
-      # Сборка при изменении ресурсов
+      # Альтернативная сборка без phpcs
       - name: Build assets
-        if: steps.check-resources.outputs.needs_build == 'true'
+        if: steps.check-assets.outputs.needs_build == 'true'
         run: |
-          npm ci
-          npm run build
-          echo "Содержимое dist:"
+          npx gulp build --production  # Используем напрямую gulp
+          echo "Build contents:"
           ls -la dist/
 
-      # Деплой ТОЛЬКО измененных файлов
+      # Деплой через FTP (только измененные файлы + dist)
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
@@ -40,11 +56,10 @@ jobs:
           password: OO!VeL9j$6hq
           local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
-          include: |
-            ${{ steps.changed-files.outputs.all_modified_files }}
-            dist/**  # Всегда заливаем собранные assets
           exclude: |
             .git/
             node_modules/
+            vendor/
             *.log
+            .github/
           dangerous-clean-slate: false
