@@ -5,8 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -17,13 +16,14 @@ jobs:
         run: npm ci
 
       - name: Build theme
-        run: npm run build # Собираем dist/ на GitHub
+        run: npm run build
 
-      - name: Upload to server via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0 # ← Исправленная версия
         with:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
           local-dir: ./dist/ # Папка сборки
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
+          dangerous-clean-slate: true
