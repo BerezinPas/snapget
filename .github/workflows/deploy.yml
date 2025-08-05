@@ -33,5 +33,6 @@ jobs:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
-          local-dir: ./dist/ # Папка сборки
-          server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
+          local-dir: ./dist/
+          server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/dist/
+          dangerous-clean-slate: true # Очищает папку dist на сервере перед заливкой
