@@ -1,32 +1,33 @@
-name: Build and Deploy
+name: Smart Deploy
 on: push
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.1"
-          tools: composer
+          fetch-depth: 2 # Для сравнения с предыдущим коммитом
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      # Проверяем изменения в assets/ И Components/
+      - name: Check for resource changes
+        id: check-resources
+        run: |
+          changed_files=$(git diff --name-only HEAD^ HEAD -- assets/ Components/)
+          if [ -n "$changed_files" ]; then
+            echo "needs_build=true" >> $GITHUB_OUTPUT
+            echo "Changed files:" $changed_files
+          fi
 
-      - name: Install PHP dependencies
-        run: composer install --no-interaction
+      # Сборка только при изменении ресурсов
+      - name: Build assets
+        if: steps.check-resources.outputs.needs_build == 'true'
+        run: |
+          npm ci
+          npm run build
+          echo "Содержимое dist:" && ls -la dist/
 
-      - name: Install Node dependencies
-        run: npm ci
-
-      - name: Build theme (skip lint)
-        run: npm run build:production # Пропускаем проверки
-
+      # Деплой всего (корень + актуальный dist)
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
@@ -35,4 +36,11 @@ jobs:
           password: OO!VeL9j$6hq
           local-dir: ./dist/
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/dist/
-          dangerous-clean-slate: true # Очищает папку dist на сервере перед заливкой
+          exclude: |
+            .git/
+            node_modules/
+            .github/
+            *.md
+            webpack.config.js
+            package*.json
+          dangerous-clean-slate: false
