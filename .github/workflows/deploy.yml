@@ -7,32 +7,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 2 # Для сравнения коммитов
 
-      # Всегда создаем папку dist (даже пустую)
-      - name: Ensure dist exists
-        run: mkdir -p dist
-
-      # Проверяем изменения
-      - name: Check for resource changes
+      # Определяем изменения в assets/ И Components/
+      - name: Check for JS/CSS changes
         id: check-resources
         run: |
-          changed_files=$(git diff --name-only HEAD^ HEAD -- assets/ Components/)
-          if [ -n "$changed_files" ]; then
+          changed_assets=$(git diff --name-only HEAD^ HEAD -- assets/)
+          changed_components=$(git diff --name-only HEAD^ HEAD -- Components/*/*.{js,scss})
+          if [ -n "$changed_assets" ] || [ -n "$changed_components" ]; then
             echo "needs_build=true" >> $GITHUB_OUTPUT
-          else
-            echo "✔ Нет изменений в ресурсах - пропускаем сборку"
+            echo "Измененные файлы:"
+            echo "$changed_assets"
+            echo "$changed_components"
           fi
 
-      # Условная сборка
+      # Сборка при изменении ресурсов
       - name: Build assets
         if: steps.check-resources.outputs.needs_build == 'true'
         run: |
           npm ci
           npm run build
-          echo "Содержимое dist:" && ls -la dist/
+          echo "Содержимое dist:"
+          ls -la dist/
 
-      # Деплой с проверкой dist
+      # Деплой ТОЛЬКО измененных файлов
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
@@ -41,10 +40,11 @@ jobs:
           password: OO!VeL9j$6hq
           local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
+          include: |
+            ${{ steps.changed-files.outputs.all_modified_files }}
+            dist/**  # Всегда заливаем собранные assets
           exclude: |
             .git/
             node_modules/
-            .github/
-            dist/  # Исключаем, если пустая
+            *.log
           dangerous-clean-slate: false
-        continue-on-error: true # Пропускаем ошибку, если dist пустой
