@@ -1,0 +1,49 @@
+<footer class="site-footer">
+  <div class="site-footer__wrap">
+    <div class="site-footer__top">
+      <div class="site-footer__slogan">
+        <a class="site-footer__logo" href="{{ site.link|e('esc_url') }}">
+          {% include '/assets/images/footer-logo.svg' %}
+        </a>
+        <div class="site-footer__text">
+          {{ text }}
+        </div>
+      </div>
+      {% if nav %}
+        <nav class="site-footer__nav">
+          {% for item in nav.items %}
+            <div class="site-footer__nav-item">
+              <a class="site-footer__nav-link {{- item.current ? ' is-active' }}" href="{{ item.link|e('esc_url') }}">{{ item.title }}</a>
+              {% if item.children %}
+                {% for item in item.children  %}
+                  <a class="site-footer__nav-child {{- item.current ? ' is-active' }}" href="{{ item.link|e('esc_url') }}">{{ item.title }}</a>
+                {% endfor %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </nav>
+      {% endif %}
+    </div>
+    <div class="site-footer__bottom">
+      <div class="site-footer__copy">
+        &copy; {{ now|date('Y') }} {{ site.name }}
+      </div>
+      {% if menu %}
+        <nav class="site-footer__menu">
+          {% for item in menu.items %}
+            <a class="site-footer__menu-link {{- item.current ? ' is-active' }}" href="{{ item.link|e('esc_url') }}">{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+      {% endif %}
+      {% if socials %}
+        <div class="site-footer__social">
+          {% for item in socials %}
+          <a class="site-footer__social-link" href="{{ item.link }}" target="_blank">
+            <img class="site-footer__social-icon" src="{{ theme.uri }}/assets/icons/icon-{{ item.icon }}.svg" alt="">
+          </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</footer>

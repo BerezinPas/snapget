@@ -1,0 +1,10 @@
+<a class="related-company" href="{{ post.link }}">
+  <picture class="related-company__picture">
+    <source srcset="{{ post.thumbnail.src|towebp }}" type="image/webp">
+    <img class="related-company__image lazyload" src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+  </picture>
+  <div class="related-company__content">
+    <h4 class="related-company__title">{{ post.title }}</h4>
+    <div class="related-company__subtitle">{{ post.excerpt.read_more(false) }}</div>
+  </div>
+</a>

@@ -1,0 +1,21 @@
+%button-new,
+.button-new {
+  display: inline-flex;
+  block-size: 50px;
+  padding: 16px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 32px;
+  background: var(--fill-fill-btn-primary-default, #802CD9);
+  cursor: pointer;
+
+  color: var(--text-text-light-default, #FFF);
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  text-decoration: none;
+
+  @extend %title-small;
+}

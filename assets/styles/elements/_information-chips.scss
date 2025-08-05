@@ -1,0 +1,15 @@
+.information-chips {
+  display: inline-flex;
+  padding: 4px 12px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 20px;
+  background: var(--fill-fill-tint-light-default, #FAF5FF);
+  color: var(--text-text-caption-hover, #5E6388);
+  font-variant-numeric: lining-nums proportional-nums;
+  @extend %title-small;
+
+  &:hover {
+    background: var(--fill-fill-tint-light-hover, #F7EEFF);
+  }
+}

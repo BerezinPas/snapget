@@ -1,0 +1,11 @@
+<section class="search-header">
+  <div class="search-header__title">
+    {{ searchTitle }} «{{ searchQuery }}»
+  </div>
+  <form class="search-header__form" role="search" action="{{ bloginfo('url') }}">
+    <input class="search-header__input input" name="s" type="search" required placeholder="{{ searchPlaceholder }}" value="{{ searchQuery }}">
+    <button class="search-header__button" type="submit">
+      {% include '/assets/icons/icon-search.svg' %}
+    </button>
+  </form>
+</section>

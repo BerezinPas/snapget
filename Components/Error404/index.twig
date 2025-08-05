@@ -1,0 +1,10 @@
+<section class="error-404">
+  {% include '/assets/icons/icon-sad-smile.svg' %}
+  <div class="error-404__text">
+    {{ text|e('wp_kses_post') }}
+  </div>
+  <a class="error-404__button button-new" href="{{ function('home_url') }}">
+    {{ button|e }}
+  </a>
+  </div>
+</section>

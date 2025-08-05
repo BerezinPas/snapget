@@ -1,0 +1,15 @@
+{% if (banner is empty) %}
+  {% set banner = theme.uri ~ '/assets/images/banner.jpg' %}
+{% endif %}
+
+<section class="user-register">
+  <div class="user-register__wrap">
+    <div class="user-register__banner">
+      <img class="user-register__banner-img" src="{{ banner }}" alt="" />
+    </div>
+    <div class="user-register__form">
+      {% include '/assets/images/SnapID.svg' %}
+      {{ function('do_shortcode', '[wppb-register form_name="register" ]') }}
+    </div>
+  </div>
+</section>

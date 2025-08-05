@@ -1,0 +1,102 @@
+<flynt-component name="SiteHeader">
+  <header class="site-header">
+    <div class="site-header__wrap">
+      <a class="site-header__logo" href="{{ site.url }}">
+        {% include '/assets/images/header-logo.svg' %}
+      </a>
+      {% if menu %}
+        <nav class="site-header__nav">
+          {% for item in menu.items %}
+            <a class="site-header__nav-link menu-item {{- item.current ? ' is-active' }}" href="{{ item.link|e('esc_url') }}">{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+      {% endif %}
+      <button class="site-header__button" type="button" data-ref="menuButton">
+        <span>{{ button }}</span>
+        {% include '/assets/icons/icon-chevron-down.svg' %}
+      </button>
+      <div class="site-header__right">
+        <form class="site-header__search" role="search" method="get" action="{{ site.url }}">
+          <input class="site-header__search-input input" type="search" name="s" value="" placeholder="{{ searchPlaceholder }}" required>
+          <button class="site-header__search-button" type="submit">
+            {% include '/assets/icons/icon-search.svg' %}
+          </button>
+        </form>
+        <button class="site-header__theme" data-ref="themeColor">
+          {% include '/assets/icons/icon-theme.svg' %}
+        </button>
+        <div class="site-header__auth">
+          {% if user.can('subscriber') or user.can('administrator') %}
+            <div class="site-header__auth-userpic" data-ref="authUserpic">
+              {% set avatar = user.field_userComponents_avatar %}
+              {% if avatar %}
+                <img class="site-header__auth-image" src="{{ avatar }}" alt="" />
+              {% else %}
+                <div class="site-header__auth-btn">
+                  {% include '/assets/icons/icon-profile.svg' %}
+                </div>
+              {% endif %}
+              <div class="site-header__auth-menu" data-ref="authMenu">
+                <a class="site-header__auth-item" href="/blog/profile#account" data-ref="authMenuItem">{{ user_profile }}</a>
+                <a class="site-header__auth-item" href="/blog/profile#favourites" data-ref="authMenuItem">{{ favourites }}</a>
+                <a class="site-header__auth-item" href="/blog/profile#security" data-ref="authMenuItem">Безопасность</a>
+                <a class="site-header__auth-item" href="/blog/profile#referral" data-ref="authMenuItem">Реферальная программа</a>
+                <a class="site-header__auth-item" href="/blog/profile#support"  data-ref="authMenuItem">{{ support }}</a>
+                <a class="site-header__auth-item" href="{{ function('wp_logout_url') }}">
+                  {% include '/assets/icons/icon-logout.svg' %}
+                  <span>{{ logout }}</span>
+                </a>
+              </div>
+            </div>
+          {% else %}
+            <div class="site-header__auth">
+              <a class="site-header__auth-btn" href="/blog/profile" data-ref="authBtn">
+                {% include '/assets/icons/icon-profile.svg' %}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <button class="site-header__hamburger hamburger hamburger--squeeze" type="button" data-ref="menuButton">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+    {% if menu %}
+      <div class="site-header__menu" data-ref="menu">
+        <form class="site-header__search" role="search" method="get" action="{{ site.url }}">
+          <input class="site-header__search-input input" type="search" name="s" value="" placeholder="{{ searchPlaceholder }}" required>
+          <button class="site-header__search-button" type="submit">
+            {% include '/assets/icons/icon-search.svg' %}
+          </button>
+        </form>
+        <nav class="site-header__menu-wrap">
+          {% for item in menu.items %}
+            <a class="site-header__menu-link menu-item {{- item.current ? ' is-active' }}" href="{{ item.link|e('esc_url') }}">{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+        <button class="site-header__theme" data-ref="themeColor">
+          {% include '/assets/icons/icon-theme-mobile.svg' %}
+          <span>{{ dark_theme }}</span>
+        </button>
+        <div class="site-header__menu-auth">
+          {% if user.can('subscriber') or user.can('administrator') %}
+              <a class="site-header__auth-item" href="/blog/profile#account" data-ref="authMenuItem">{{ user_profile }}</a>
+              <a class="site-header__auth-item" href="/blog/profile#favourites" data-ref="authMenuItem">{{ favourites }}</a>
+              <a class="site-header__auth-item" href="/blog/profile#support"  data-ref="authMenuItem">{{ support }}</a>
+              <a class="site-header__auth-item" href="{{ function('wp_logout_url') }}">
+                {% include '/assets/icons/icon-logout.svg' %}
+                <span>{{ logout }}</span>
+              </a>
+          {% else %}
+            <a class="site-header__auth" href="/blog/profile" data-ref="authBtn">
+              {% include '/assets/icons/icon-user-profile.svg' %}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </header>
+  <link rel="stylesheet" href="{{ theme.path }}/assets/styles/custom.css?ver={{ theme.version }}" />
+</flynt-component>

@@ -1,0 +1,28 @@
+<section class="check-email">
+  <div class="check-email__wrap">
+    {% include '/assets/images/SnapID.svg' %}
+    
+    <h1 class="check-email__title">Проверьте вашу почту</h1>
+    
+    {% if user_email %}
+      <p class="check-email__text">Мы отправили ссылку подтверждения на <strong>{{ user_email }}</strong></p>
+    {% else %}
+      <p class="check-email__text">Мы отправили вам ссылку подтверждения</p>
+    {% endif %}
+    
+    <div class="resend-box">
+      <form method="post">
+        <input type="hidden" name="email" value="{{ user_email }}">
+        <button class="check-email__btn button-new" type="submit" name="resend_email">
+          Отправить письмо повторно
+        </button>
+      </form>
+      
+      {% if message %}
+        <div class="alert {% if 'Ошибка' in message %}alert-error{% else %}alert-success{% endif %}">
+          {{ message }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

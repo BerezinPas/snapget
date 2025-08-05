@@ -1,0 +1,107 @@
+.media-modal {
+  max-width: 800px;
+  max-height: 505px;
+  margin: 0 auto;
+
+  .modal-open & {
+    top: 124px;
+  }
+
+  .screen-reader-text {
+    display: none;
+  }
+
+  .uploader-inline {
+    // height: 100%;
+    // margin-bottom: 0 !important;
+    margin: 24px 32px 56px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1.5px dashed var(--border-border-system2, #B266FF);
+  }
+
+  .uploader-inline-content {
+    width: 100%;
+    position: relative !important;
+    
+  }
+
+  .button-hero,
+  .button-primary {
+    // @extend %button-new;
+    display: inline-flex !important;
+    block-size: 50px;
+    padding: 16px 20px !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border: 0 !important;
+    border-radius: 32px !important;
+    background: var(--fill-fill-btn-primary-default, #802CD9) !important;
+    cursor: pointer;
+
+    color: var(--text-text-light-default, #FFF) !important;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-decoration: none;
+  }
+}
+
+.media-modal-content {
+  display: flex;
+  padding: 24px 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 16px;
+  border: 1px solid var(--border-border-system, #DEDEDE);
+  background: var(--fill-fill-surface, #FFF);
+}
+
+.media-frame-title {
+  .modal-open & {
+    height: 73px;
+    padding: 24px 32px;
+  }
+
+  h1 {
+    padding: 0 !important;
+    @extend %title-medium;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: var(--text-text-title-default, #1A1A1A);
+  }
+}
+
+.media-frame-toolbar {
+  .media-toolbar {
+    border: 0 !important;
+  }
+}
+
+.media-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-open & {
+    width: 73px;
+    height: 73px;
+  }
+}
+
+.media-modal-backdrop {
+  background: var(--fill-fill-backdrop, rgba(26, 26, 26, 0.60)) !important;
+}
+
+.media-frame-content {
+  top: 73px !important;
+}
+
+.uploader-inline .browser {
+  .modal-open & {
+    display: inline-flex !important;
+  }
+}

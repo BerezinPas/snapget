@@ -1,0 +1,155 @@
+flynt-component {
+  display: block;
+  position: relative;
+}
+
+body {
+  font-family: 'Inter';
+  background: var(--fill-fill-background, #F6F6F7);
+}
+
+.site-page {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+  min-block-size: 100%;
+  overflow: hidden;
+
+  .admin-bar & {
+    padding-block-start: var(--wp-admin--admin-bar--height);
+  }
+}
+
+.mobile-row{
+  display: none;
+  @media (max-width: $desktop) {
+    display: block;
+  }
+}
+
+.pc-row{
+  display: block;
+  @media (max-width: $desktop) {
+    display: none;
+  }
+}
+
+.site-main {
+  margin: 0 auto;
+  width: 100%;
+  padding: 24px 0 128px;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 16px 40px;
+
+  @media (min-width: $tablet) {
+    width: 720px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1240px;
+    grid-template-columns: 902px 266px;
+    gap: 40px;
+  }
+
+  @media (min-width: $large) {
+    width: 1408px;
+    grid-template-columns: 1028px 308px;
+  }
+
+  .search & {
+    max-width: 1036px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: $large) {
+      max-width: 944px;
+    }
+  }
+
+  .single-company & {
+    max-width: 832px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media (min-width: $large) {
+      max-width: 944px;
+    }
+  }
+
+  .error404 & {
+    max-width: 1004px;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+
+    @media (min-width: $large) {
+      max-width: 944px;
+    }
+  }
+
+  .page-template-page-text &,
+  .page-template-page-login &,
+  .page-template-page-register &,
+  .page-template-page-profile &,
+  .page-template-page-password &,
+  .page-template-page-complete &,
+  .page-template-page-email & {
+    grid-template-columns: 1fr;
+  }
+}
+
+.site-content {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}
+
+.site-sidebar {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}
+
+.site-article {
+  display: flex;
+  padding: 36px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  // gap: 36px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+
+  @media (min-width: $tablet) {
+    padding: 36px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 36px 102px;
+  }
+
+  @media (min-width: $large) {
+    padding: 36px 116px;
+  }
+}
+
+.site-company {
+  display: flex;
+  padding: 36px 0px 80px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+}
+
+.site-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}

@@ -1,0 +1,45 @@
+<a class="list-article" href="{{ post.link|e('esc_url') }}">
+  <div class="list-article__content">
+    <h1 class="list-article__title">{{ post.title }}</h1>
+    <div class="list-article__text">{{ post.excerpt.read_more(false) }}</div>
+    <div class="list-article__meta">
+      {% if post.tags %}
+        <div class="list-article__tags">
+          {% if post.main_tags %}
+            {% for tag in post.tags %}
+              {% if tag.id == term_id %}
+                <span class="list-article__tag article-chips">{{ tag.title }}</span>
+              {% endif %}
+            {% endfor %}
+            {% for tag in post.main_tags %}
+              {% if tag.id != term_id %}
+                <span class="list-article__tag article-chips">{{ tag.title }}</span>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% for tag in post.tags %}
+              {% if tag.id == term_id %}
+                <span class="list-article__tag article-chips">{{ tag.title }}</span>
+              {% endif %}
+            {% endfor %}
+            {% for tag in post.tags %}
+              {% if loop.index < 3 %}
+                {% if tag.id != term_id %}
+                  <span class="list-article__tag article-chips">{{ tag.title }}</span>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="list-article__date">{{ post.date }}</div>
+    </div>
+  </div>
+  <picture class="list-article__picture">
+    {# <source type="image/jpeg" media="(min-width: 1440px)" srcset="{{ post.thumbnail.src('list-large') }}">
+    <source type="image/jpeg" media="(min-width: 1280px)" srcset="{{ post.thumbnail.src('list-desktop') }}">
+    <source type="image/jpeg" media="(min-width: 744px)" srcset="{{ post.thumbnail.src('list-tablet') }}">
+    <source type="image/jpeg" media="(max-width: 743px)" srcset="{{ post.thumbnail.src('list-mobile') }}"> #}
+    <img class="list-article__image lazyload" src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+  </picture>
+</a>

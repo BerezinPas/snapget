@@ -1,0 +1,25 @@
+.social-links {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+}
+
+.social-links__title {
+  @extend %title-medium;
+  color: var(--text-text-title-default, #1A1A1A);
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.social-links__text {
+  @extend %body-medium;
+  color: var(--text-text-body-default, #262626);
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.social-links__items {
+  display: flex;
+  gap: 16px;
+}

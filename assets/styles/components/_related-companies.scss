@@ -1,0 +1,28 @@
+.related-companies {
+  padding: 24px;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+}
+
+.related-companies__title {
+  @extend %title-medium;
+  color: var(--text-text-title-default, #1A1A1A);
+}
+
+.related-companies__items {
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+}
+
+.related-companies__divider {
+  height: 1px;
+  background: var(--border-border-system, #DEDEDE);
+
+  &:last-child {
+    display: none;
+  }
+}

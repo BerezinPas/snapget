@@ -1,0 +1,203 @@
+:root,
+[data-theme="reset"] {
+  --color-accent: hsla(212, 100%, 45%, 1);
+  --color-background: hsla(0, 0%, 100%, 1);
+  --color-background-secondary: hsla(0, 0%, 19%, 0.08);
+  --color-border: hsl(0, 0%, 90%);
+  --color-border-secondary: hsl(0, 0%, 19%, 0.68);
+  --color-text: hsl(0, 0%, 19%, 1);
+  --color-text-muted: hsla(0, 0%, 19%, 0.8);
+  --color-error: hsl(343, 98%, 46%);
+}
+
+[data-theme="light"] {
+  --border-border-btn-primary-focus: #b584e9;
+  --border-border-btn-secondary-focus: #8e41df;
+  --border-border-input-active: #b266ff;
+  --border-border-input-default: #dedede;
+  --border-border-input-disable: #dedede;
+  --border-border-input-error: #e25778;
+  --border-border-input-fill: #dedede;
+  --border-border-input-focus: #b266ff;
+  --border-border-input-hover: #e5ccff;
+  --border-border-system: #dedede;
+  --border-border-system2: #b266ff;
+  --fill-fill-background: #f6f6f7;
+  --fill-fill-brand-dark: #1a1a1a;
+  --fill-fill-brand-primary: #802cd9;
+  --fill-fill-brand-secondary: #f60;
+  --fill-fill-btn-primary-default: #802cd9;
+  --fill-fill-btn-primary-disable: #8e41df;
+  --fill-fill-btn-primary-focus: #802cd9;
+  --fill-fill-btn-primary-hover: #8e41df;
+  --fill-fill-btn-primary-pressed: #802cd9;
+  --fill-fill-btn-secondary-default: #faf5ff;
+  --fill-fill-btn-secondary-disable: #faf5ff;
+  --fill-fill-btn-secondary-focus: #faf5ff;
+  --fill-fill-btn-secondary-hover: #f7eeff;
+  --fill-fill-btn-secondary-pressed: #faf5ff;
+  --fill-fill-input-default: #fff;
+  --fill-fill-surface: #fff;
+  --fill-fill-surface1: #f6f7f9;
+  --fill-fill-surface2: #faf5ff;
+  --fill-fill-tint-danger-default: #d92550;
+  --fill-fill-tint-danger-hover: #de3b62;
+  --fill-fill-tint-dark-default: #62688e;
+  --fill-fill-tint-dark-hover: #6e749b;
+  --fill-fill-tint-info-default: #0072ed;
+  --fill-fill-tint-info-hover: #057dff;
+  --fill-fill-tint-light-default: #faf5ff;
+  --fill-fill-tint-light-hover: #f7eeff;
+  --fill-fill-tint-primary-default: #802cd9;
+  --fill-fill-tint-primary-hover: #8d41dd;
+  --fill-fill-tint-secondary-default: #f60;
+  --fill-fill-tint-secondary-hover: #ff751a;
+  --fill-fill-tint-success-default: #409443;
+  --fill-fill-tint-succsess-hover: #48a74c;
+  --fill-fill-tint-tertiary-default: #4fc9ef;
+  --fill-fill-tint-tertiary-hover: #65d0f1;
+  --fill-fill-tint-warning-default: #edbf00;
+  --fill-fill-tint-warning-hover: #ffce05;
+  --fill-text-light-disable: #b584e9;
+  --text-text-body-default: #262626;
+  --text-text-body-hover: #404040;
+  --text-text-caption-default: #6b7199;
+  --text-text-caption-disable: #bcbfd1;
+  --text-text-caption-hover: #5e6388;
+  --text-text-danger-default: #d92550;
+  --text-text-dark-default: #1a1a1a;
+  --text-text-dark-hover: #1a1a1a;
+  --text-text-input-active: #545454;
+  --text-text-input-default: #686868;
+  --text-text-input-disable: #adadad;
+  --text-text-input-error: #545454;
+  --text-text-input-fill: #686868;
+  --text-text-input-focus: #686868;
+  --text-text-input-hover: #434343;
+  --text-text-input-placeholder-active: #c7c7c7;
+  --text-text-light-default: #fff;
+  --text-text-light-hover: #fff;
+  --text-text-primary-default: #802cd9;
+  --text-text-title-default: #1a1a1a;
+  --text-text-title-hover: #202020;
+
+
+  --color-background: hsl(212, 76%, 97%);
+  --color-text: hsla(212, 100%, 15%, 1);
+  --color-border: hsla(212, 100%, 15%, 0.7);
+  --color-border-secondary: var(--color-border);
+}
+
+[data-theme="dark"] {
+  --border-border-btn-primary-focus: #b584e9;
+  --border-border-btn-secondary-focus: #8e41df;
+  --border-border-input-active: #852ddf;
+  --border-border-input-default: #808080;
+  --border-border-input-disable: #2f2f2f;
+  --border-border-input-error: #d61f4a;
+  --border-border-input-fill: #808080;
+  --border-border-input-focus: #852ddf;
+  --border-border-input-hover: #bc8cef;
+  --border-border-system: #404040;
+  --border-border-system2: #8c31e7;
+  --fill-fill-background: #101010;
+  --fill-fill-brand-dark: #fff;
+  --fill-fill-brand-primary: #802cd9;
+  --fill-fill-brand-secondary: #f60;
+  --fill-fill-btn-primary-default: #802cd9;
+  --fill-fill-btn-primary-disable: #8e41df;
+  --fill-fill-btn-primary-focus: #802cd9;
+  --fill-fill-btn-primary-hover: #8e41df;
+  --fill-fill-btn-primary-pressed: #802cd9;
+  --fill-fill-btn-secondary-default: #2a2d3d;
+  --fill-fill-btn-secondary-disable: #2a2d3d;
+  --fill-fill-btn-secondary-focus: #323548;
+  --fill-fill-btn-secondary-hover: #323548;
+  --fill-fill-btn-secondary-pressed: #2a2d3d;
+  --fill-fill-input-default: #1c1c1c;
+  --fill-fill-surface: #1c1c1c;
+  --fill-fill-surface1: #262626;
+  --fill-fill-surface2: #2a2d3d;
+  --fill-fill-tint-danger-default: #d92550;
+  --fill-fill-tint-danger-hover: #de3b62;
+  --fill-fill-tint-dark-default: #62688e;
+  --fill-fill-tint-dark-hover: #6e749b;
+  --fill-fill-tint-info-default: #0072ed;
+  --fill-fill-tint-info-hover: #057dff;
+  --fill-fill-tint-light-default: #2a2d3d;
+  --fill-fill-tint-light-hover: #323548;
+  --fill-fill-tint-primary-default: #802cd9;
+  --fill-fill-tint-primary-hover: #8d41dd;
+  --fill-fill-tint-secondary-default: #f60;
+  --fill-fill-tint-secondary-hover: #ff751a;
+  --fill-fill-tint-success-default: #409443;
+  --fill-fill-tint-succsess-hover: #48a74c;
+  --fill-fill-tint-tertiary-default: #4fc9ef;
+  --fill-fill-tint-tertiary-hover: #65d0f1;
+  --fill-fill-tint-warning-default: #edbf00;
+  --fill-fill-tint-warning-hover: #ffce05;
+  --fill-text-light-disable: #b584e9;
+  --text-text-body-default: #ccc;
+  --text-text-body-hover: #999;
+  --text-text-caption-default: #8f92ab;
+  --text-text-caption-disable: #bcbfd1;
+  --text-text-caption-hover: #a2a4b9;
+  --text-text-danger-default: #e62654;
+  --text-text-dark-default: #1a1a1a;
+  --text-text-dark-hover: #1a1a1a;
+  --text-text-input-active: #ccc;
+  --text-text-input-default: #808080;
+  --text-text-input-disable: #3d3d3d;
+  --text-text-input-error: #ccc;
+  --text-text-input-fill: #808080;
+  --text-text-input-focus: #808080;
+  --text-text-input-hover: #808080;
+  --text-text-input-placeholder-active: #4b4b4b;
+  --text-text-light-default: #fff;
+  --text-text-light-hover: #fff;
+  --text-text-primary-default: #9647e6;
+  --text-text-title-default: #ececec;
+  --text-text-title-hover: #cacaca;
+
+
+  --color-accent: hsla(79, 100%, 60%, 1);
+  --color-background: hsla(212, 100%, 15%, 1);
+  --color-background-secondary: hsl(228, 56%, 98%, 0.06);
+  --color-border-secondary: hsl(0, 0%, 90%, 0.68);
+  --color-text: hsla(0, 0%, 100%, 1);
+  --color-text-muted: hsl(0, 0%, 100%, 0.8);
+}
+
+$tablet: 744px;
+$desktop: 1280px;
+$large: 1440px;
+
+$breakpoint-mobile-horizontal: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-horizontal: 1024px;
+$breakpoint-desktop: 1280px;
+
+:root {
+  --font-family-inter: 'Inter', sans-serif;
+
+
+  /**
+   * FOUC can be reduced with good matching fallback font.
+   * https://meowni.ca/font-style-matcher/ or
+   * https://github.com/pixel-point/fontpie
+   */
+  // --font-family-heading: 'Public Sans', 'Trebuchet MS', sans-serif;
+  // --font-family-text: 'Public Sans', 'Trebuchet MS', sans-serif;
+  --font-size-body: 1.125rem;
+  --font-size-body-small: 1rem;
+  --flow-space: 1.5625rem;
+  --column-gap: clamp(2.5rem, 2.5vw + 1.75rem, 3.75rem);
+
+  --content-max-width: 700px;
+  --content-max-width-wide: 900px;
+  --content-max-width-full: 1200px;
+
+  --box-spacing: clamp(1rem, 2.50vw + 0.25rem, 2.25rem);
+  --container-spacing: clamp(1rem, 2.5vw + 0.25rem, 2.25rem);
+  --component-spacing: clamp(3rem, 6.5vw + 1.05rem, 6.25rem);
+}

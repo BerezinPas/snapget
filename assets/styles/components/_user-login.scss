@@ -1,0 +1,60 @@
+.user-login {
+  width: 448px;
+  padding: 48px 56px 40px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .login-register-lost-password {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    color: var(--fill-fill-surface, #FFF);
+    gap: 4px;
+
+    a {
+      display: flex;
+      padding: 16px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      flex: 1 0 0;
+      color: var(--text-button-text-default, #802CD9);
+      @extend %button-large;
+      text-align: center;
+      white-space: nowrap;
+
+      @media (max-width: $tablet) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.user-login__wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: $tablet) {
+    max-width: 336px;
+  }
+}
+
+#wppb-loginform {
+  width: 100%;
+  padding: 20px 0;
+  margin: 16px 0;
+}

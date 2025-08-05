@@ -1,0 +1,32 @@
+<flynt-component name="SearchResults">
+  <section class="list-articles">
+    {% if posts|length > 0 %}
+      {% if banners|length > 0 %}
+        {% for post in posts %}
+          {% if loop.index == 3 %}
+            {{ renderComponent('BannerFeed', { banner: banners[0] }) }}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <div class="list-articles__posts" data-ref="posts">
+        {% for post in posts %}
+          {{ renderComponent('ListArticle') }}
+          <div class="list-articles__divider"></div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="list-articles__empty">
+        {{ no_results }}
+      </div>
+    {% endif %}
+
+    {% set pagination = posts.pagination %}
+    {% if pagination.pages %}
+      {% if pagination.next %}
+      <div class="list-articles__pagination" data-ref="pagination">
+        <a class="list-articles__button button-new" data-ref="loadMore" href="{{ pagination.next.link|e('esc_url') }}">{{ load_more }}</a>
+      </div>
+      {% endif %}
+    {% endif %}
+  </section>
+</flynt-component>

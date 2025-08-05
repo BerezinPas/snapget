@@ -1,0 +1,215 @@
+.post-content {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+
+  h1 {
+    margin-bottom: 16px;
+    @extend %headline-large;
+    overflow-wrap: anywhere;
+    color: var(--text-text-title-default, #1A1A1A);
+  }
+
+  h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    @extend %subtitle-large;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: var(--text-text-title-default, #1A1A1A);
+  }
+
+  h4, h5, h6 {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    @extend %subtitle-medium;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: var(--text-text-title-default, #1A1A1A);
+  }
+
+  p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    @extend %body-large;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: var(--text-text-body-default, #262626);
+  }
+
+  a {
+    color: var(--text-text-primary-default, #802CD9);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    padding-left: 30px;
+
+    li {
+      margin-bottom: 8px;
+      @extend %body-list;
+      font-variant-numeric: lining-nums proportional-nums;
+      color: var(--text-text-body-default, #262626);
+    }
+  }
+
+  blockquote {
+    margin-left: 12px;
+    margin-right: 40px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    border-left: 4px solid var(--fill-fill-tint-primary-default, #802CD9);
+    color: var(--text-text-title-default, #1A1A1A);
+    font-variant-numeric: lining-nums proportional-nums;
+
+    p {
+      margin-top: 0;;
+      margin-bottom: 12px;
+      @extend %title-medium;
+    }
+
+    cite {
+      @extend %body-large;
+    }
+  }
+}
+
+.wp-block-image {
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+  img {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &.size-full {
+    margin-left: -24px;
+    margin-right: -24px;
+
+    @media (min-width: $tablet) {
+      margin-left: -36px;
+      margin-right: -36px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-left: -102px;
+      margin-right: -102px;
+    }
+
+    @media (min-width: $large) {
+      margin-left: -116px;
+      margin-right: -116px;
+    }
+
+    img {
+      border-radius: 0;
+    }
+
+    .wp-element-caption {
+      margin-left: 24px;
+      margin-right: 24px;
+
+      @media (min-width: $tablet) {
+        margin-left: 36px;
+        margin-right: 36px;
+      }
+
+      @media (min-width: $desktop) {
+        margin-left: 102px;
+        margin-right: 102px;
+      }
+
+      @media (min-width: $large) {
+        margin-left: 116px;
+        margin-right: 116px;
+      }
+    }
+  }
+
+  &.is-style-rounded {
+    img {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  }
+
+  .wp-element-caption {
+    margin-top: 4px;
+    @extend %caption-medium;
+    color: var(--text-text-caption-default, #6B7199);
+    font-variant-numeric: lining-nums proportional-nums;
+  }
+}
+
+.wp-block-embed {
+  &.wp-embed-aspect-16-9 {
+    .wp-block-embed__wrapper::before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+  }
+
+  &.wp-has-aspect-ratio {
+    iframe {
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
+.wp-block-embed,
+.wp-block-video {
+  margin-left: -24px;
+  margin-right: -24px;
+
+  @media (min-width: $tablet) {
+    margin-left: -36px;
+    margin-right: -36px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-left: -102px;
+    margin-right: -102px;
+  }
+
+  @media (min-width: $large) {
+    margin-left: -116px;
+    margin-right: -116px;
+  }
+
+  .wp-element-caption {
+    margin-top: 4px;
+    margin-left: 24px;
+    margin-right: 24px;
+    @extend %caption-medium;
+    color: var(--text-text-caption-default, #6B7199);
+    font-variant-numeric: lining-nums proportional-nums;
+
+    @media (min-width: $tablet) {
+      margin-left: 36px;
+      margin-right: 36px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-left: 102px;
+      margin-right: 102px;
+    }
+
+    @media (min-width: $large) {
+      margin-left: 116px;
+      margin-right: 116px;
+    }
+  }
+}

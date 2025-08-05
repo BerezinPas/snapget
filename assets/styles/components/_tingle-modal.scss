@@ -1,0 +1,31 @@
+.tingle-modal {
+  display: flex !important;
+  background: var(--fill-fill-backdrop, rgba(26, 26, 26, 0.60));
+  backdrop-filter: none;
+  cursor: default;
+}
+
+.tingle-modal-box {
+  width: fit-content;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+}
+
+.tingle-modal-box__content {
+  padding: 24px 28px 28px;
+  overflow: auto !important;
+}
+
+.tingle-modal-box__footer {
+  padding: 0;
+}
+
+.tingle-modal__close {
+  width: 24px;
+  height: 24px;
+  top: 24px;
+  right: 28px;
+  left: auto !important;
+  color: #1A1A1A !important;
+  background-color: transparent !important;
+}

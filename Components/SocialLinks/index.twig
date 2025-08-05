@@ -1,0 +1,13 @@
+<section class="social-links">
+  <h3 class="social-links__title">{{ title }}</h3>
+  <p class="social-links__text">{{ text }}</p>
+  {% if items %}
+    <div class="social-links__items">
+      {% for item in items %}
+        <a class="social-links__link" href="{{ item.link }}" target="_blank">
+          <img class="social-links__icon" src="{{ theme.uri }}/assets/icons/icon-{{ item.icon }}.svg" alt="">
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>

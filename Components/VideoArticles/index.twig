@@ -1,0 +1,25 @@
+<flynt-component name="VideoArticles">
+  <section class="video-articles">
+    {% if posts|length > 0 %}
+      <div class="video-articles__posts" data-ref="posts">
+        {% for post in posts %}
+          {{ renderComponent('VideoArticle', { post: post }) }}
+          {% if banners|length > 0 %}
+            {% if loop.index == 3 %}
+              {{ renderComponent('BannerFeed', { banner: banners[0] }) }}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% set pagination = posts.pagination %}
+    {% if pagination.pages %}
+      {% if pagination.next %}
+      <div class="video-articles__pagination" data-ref="pagination">
+        <a class="video-articles__button button-new" data-ref="loadMore" href="{{ pagination.next.link|e('esc_url') }}">{{ load_more }}</a>
+      </div>
+      {% endif %}
+    {% endif %}
+  </section>
+</flynt-component>

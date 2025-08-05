@@ -1,0 +1,13 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <section class="site-content">
+    <article class="site-company">
+      {{ renderComponent('CompanyHeader') }}
+      {{ renderComponent('CompanyContent') }}
+    </article>
+  </section>
+  <aside class="site-sidebar">
+    {{ function('do_shortcode', '[contact-form-7 id="86d8ac3" title="Форма ОС расчет логистики"]') }}
+  </aside>
+{% endblock %}

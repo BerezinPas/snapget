@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="html {{ body_class }}" {{ site.language_attributes }}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="alternate" type="application/rss+xml" title="{{- theme.labels.feed|replace({ '%s': site.title }) -}}" href="{{ site.rss2|e('esc_url') }}">
+    {{ function('acf_form_head') }}
+    {{ function('wp_head') }}
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(97422693, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/97422693" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </head>
+  <body data-theme="{{ theme.color }}">
+    {# {{ function('wp_body_open') }} #}
+    {% block layout %}
+      <div class="site-page">
+        {{ renderComponent('SiteHeader') }}
+        <main class="site-main">
+          {% if function('post_password_required') %}
+            {{ function('get_the_password_form') }}
+          {% else %}
+            {% block content %}
+              No <code>{{ '{% block content %}' }}</code> defined for this template.
+            {% endblock %}
+          {% endif %}
+        </main>
+        {% block footer %}
+          {{ renderComponent('SiteFooter') }}
+        {% endblock %}
+      </div>
+    {% endblock %}
+    <div class="wp-footer">
+      {{ function('wp_footer') }}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<header class="company-header">
+  <picture class="company-header__picture">
+    <source srcset="{{ post.thumbnail.src|towebp }}" type="image/webp">
+    <img class="company-header__image lazyload" src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+  </picture>
+  <h1 class="company-header__title">{{ post.title }}</h1>
+  <div class="company-header__subtitle">{{ post.excerpt.read_more(false) }}</div>
+</header>

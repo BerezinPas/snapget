@@ -1,0 +1,1439 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flynt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-09 08:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.8; wp-6.5.2\n"
+"X-Domain: flynt"
+
+#. %s: Link and title of selected reusable-post
+#: Components/ReusableComponent/functions.php:42
+#, php-format
+msgid " Edit %s."
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:38
+#: Components/default/BlockSpacer/functions.php:38
+msgid "%"
+msgstr ""
+
+#. %1$s: Plugin Name, %2$s: plugin page.
+#: lib/Init.php:100
+#, php-format
+msgid ""
+"%1$s plugin not activated. Make sure you activate the plugin on the %2$s."
+msgstr ""
+
+#. %1$s, %2$s: link wrapper.
+#: lib/Init.php:85
+#, php-format
+msgid "%1$sAdvanced Custom Fields PRO%2$s"
+msgstr ""
+
+#. %1$s, %2$s: link wrapper.
+#: lib/Init.php:92
+#, php-format
+msgid "%1$splugin page%2$s"
+msgstr ""
+
+#. %d: Placeholder for a number
+#: Components/default/GridPostsLatest/functions.php:132
+#: Components/default/GridPostsArchive/functions.php:149
+#: Components/default/BlockPostHeader/functions.php:46
+msgid "%d is placeholder for number of minutes"
+msgstr ""
+
+#. %d: Placeholder for a number
+#: Components/default/GridPostsLatest/functions.php:135
+#: Components/default/GridPostsArchive/functions.php:152
+#: Components/default/BlockPostHeader/functions.php:50
+msgid "%d min read"
+msgstr ""
+
+#: inc/theme.php:43
+#, php-format
+msgid "%s Feed"
+msgstr ""
+
+#: inc/theme.php:40
+#, php-format
+msgid "%s is placeholder for site title."
+msgstr ""
+
+#: inc/fieldVariables.php:20
+msgid "(none)"
+msgstr ""
+
+#: Components/default/BlockPostHeader/functions.php:35
+msgid "(Posted) in"
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:53
+#: Components/default/BlockSpacer/functions.php:53
+msgid "0% no spacing between components"
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:55
+#: Components/default/BlockSpacer/functions.php:55
+msgid "150% extends vertical space (by 50%)"
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:54
+#: Components/default/BlockSpacer/functions.php:54
+msgid "50% reduces vertical space (by half)"
+msgstr ""
+
+#: inc/sliderOptions.php:9
+msgid "Accessibility"
+msgstr ""
+
+#. 1: <a> element 2: </a> element
+#: Components/ReusableComponent/functions.php:36
+#, php-format
+msgid "Add %1$sreusable component%2$s."
+msgstr ""
+
+#: inc/fieldGroups/pageComponents.php:16
+#: inc/fieldGroups/reusableComponents.php:17
+msgid "Add Component"
+msgstr ""
+
+#: Components/ListComponents/functions.php:82
+msgid "Add Component Block"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:44
+#: Components/default/GridImageText/functions.php:45
+msgid "Add Item"
+msgstr ""
+
+#: inc/customPostTypes/company.php:22 inc/customPostTypes/banner.php:22
+msgid "Add New"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:21
+msgid "Add New Banner"
+msgstr ""
+
+#: inc/customPostTypes/company.php:21
+msgid "Add New Item"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:15
+msgid "Add New Reusable Components"
+msgstr ""
+
+#: Components/PostHeader/functions.php:97
+#: Components/PostHeader/functions.php:100
+msgid "Add to Favorite"
+msgstr ""
+
+#: inc/fieldVariables.php:50
+msgid "Align"
+msgstr ""
+
+#: Components/default/GridImageText/functions.php:26
+msgid "Align items center"
+msgstr ""
+
+#: Components/default/GridImageText/functions.php:25
+msgid "Align items left"
+msgstr ""
+
+#: inc/fieldVariables.php:73
+msgid "Align text"
+msgstr ""
+
+#: inc/fieldVariables.php:84
+msgid "Align text center"
+msgstr ""
+
+#: inc/fieldVariables.php:83
+msgid "Align text left"
+msgstr ""
+
+#: Components/default/GridPostsArchive/functions.php:141
+msgid "All"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:20
+msgid "All Banners"
+msgstr ""
+
+#: inc/customPostTypes/company.php:20
+msgid "All Items"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:142
+#: Components/default/GridPostsArchive/functions.php:138
+msgid "All Posts"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:14
+msgid "All Reusable Components"
+msgstr ""
+
+#: Components/VideoNews/functions.php:35
+msgid "All Videos"
+msgstr ""
+
+#: Components/default/BlockAnchor/functions.php:31
+msgid "Anchor link"
+msgstr ""
+
+#: Components/default/NavigationFooter/functions.php:51
+#: Components/default/NavigationMain/functions.php:39
+#: Components/default/NavigationBurger/functions.php:39
+msgid "Aria Label"
+msgstr ""
+
+#: Components/PostFooter/functions.php:38
+msgid "Author"
+msgstr ""
+
+#: Components/default/SliderImages/functions.php:67
+msgid "Autoplay Speed (in milliseconds)"
+msgstr ""
+
+#: Components/default/BlockNotFound/functions.php:30
+msgid "Back to homepage"
+msgstr ""
+
+#: Components/default/BlockNotFound/functions.php:26
+msgid "Back to Homepage Label"
+msgstr ""
+
+#: Components/TagHeader/functions.php:21
+msgid "Back to main page"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:16 inc/customPostTypes/banner.php:42
+#: Components/UserRegister/functions.php:14
+msgid "Banner"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:17
+msgid "Banner Archives"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:18
+msgid "Banner Attributes"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:8
+msgid "Banner Components"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:43
+msgid "Banner Description"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:13
+msgctxt "Banner General Name"
+msgid "Banners"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:14
+msgctxt "Banner Singular Name"
+msgid "Banner"
+msgstr ""
+
+#: inc/theContentFix.php:162
+msgid "Banner Views"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:15
+msgid "Banners"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:37
+msgid "Banners list"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:38
+msgid "Banners list navigation"
+msgstr ""
+
+#: inc/baseStyle.php:49
+msgid "Base Style"
+msgstr ""
+
+#. Author of the theme
+msgid "Bleech "
+msgstr ""
+
+#: Components/default/BlockAnchor/functions.php:20
+msgid "Block: Anchor"
+msgstr ""
+
+#: Components/default/BlockImage/functions.php:11
+msgid "Block: Image"
+msgstr ""
+
+#: Components/default/BlockImageText/functions.php:11
+msgid "Block: Image Text"
+msgstr ""
+
+#: Components/default/BlockSpacer/functions.php:16
+msgid "Block: Spacer"
+msgstr ""
+
+#: Components/UserProfile/functions.php:12
+msgid "Block: UserProfile"
+msgstr ""
+
+#: Components/default/BlockVideoOembed/functions.php:23
+msgid "Block: Video Oembed"
+msgstr ""
+
+#: Components/default/BlockWysiwyg/functions.php:11
+msgid "Block: Wysiwyg"
+msgstr ""
+
+#: Components/BreakingArticle/functions.php:19
+msgid "Breaking Article"
+msgstr ""
+
+#: inc/tinyMce.php:122 Components/VideoNews/functions.php:32
+#: Components/SiteHeader/functions.php:30 Components/TagHeader/functions.php:18
+#: Components/BreakingArticle/functions.php:45
+#: Components/Error404/functions.php:18
+msgid "Button"
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:74
+msgid "Button - Search"
+msgstr ""
+
+#: inc/tinyMce.php:127
+msgid "Button Outlined"
+msgstr ""
+
+#: inc/tinyMce.php:132
+msgid "Button Text"
+msgstr ""
+
+#: inc/tinyMce.php:118
+msgid "Buttons"
+msgstr ""
+
+#: Components/ListComponents/functions.php:96
+msgid "Calls To Action"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:59
+msgid "Categories"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:34
+msgid "Category"
+msgstr ""
+
+#: inc/fieldVariables.php:64
+msgid "Center"
+msgstr ""
+
+#: Components/ListComponents/functions.php:150
+#: Components/ListComponents/functions.php:153
+msgid "Code"
+msgstr ""
+
+#: inc/customPostTypes/company.php:15
+msgid "Companies"
+msgstr ""
+
+#: inc/customPostTypes/company.php:16 inc/customPostTypes/company.php:42
+msgid "Company"
+msgstr ""
+
+#: inc/customPostTypes/company.php:43
+msgid "Company Description"
+msgstr ""
+
+#: inc/customPostTypes/company.php:13
+msgctxt "Company General Name"
+msgid "Companies"
+msgstr ""
+
+#: inc/customPostTypes/company.php:14
+msgctxt "Company Singular Name"
+msgid "Company"
+msgstr ""
+
+#: Components/ListComponents/functions.php:85
+msgid "Component"
+msgstr ""
+
+#: Components/ListComponents/functions.php:76
+msgid "Component Blocks"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:7
+#: inc/customPostTypes/reusable-components.php:8
+#: inc/customPostTypes/reusable-components.php:9
+msgctxt "Component Post Type"
+msgid "Reusable Components"
+msgstr ""
+
+#: inc/theme.php:63 Components/ListComponents/functions.php:60
+#: Components/UserProfile/functions.php:15
+#: Components/FormPasswordProtection/functions.php:23
+#: Components/default/GridPostsLatest/functions.php:43
+#: Components/default/GridPostsLatest/functions.php:102
+#: Components/default/NavigationFooter/functions.php:22
+#: Components/default/BlockImage/functions.php:14
+#: Components/default/BlockNotFound/functions.php:9
+#: Components/default/SliderImages/functions.php:23
+#: Components/default/ListSearchResults/functions.php:14
+#: Components/default/GridImageText/functions.php:14
+#: Components/default/BlockImageText/functions.php:14
+#: Components/default/BlockVideoOembed/functions.php:26
+#: Components/default/BlockWysiwyg/functions.php:14
+#: Components/default/GridPostsArchive/functions.php:60
+msgid "Content"
+msgstr ""
+
+#: Components/default/BlockNotFound/functions.php:17
+msgid "Content to be displayed on the 404 Not Found Page"
+msgstr ""
+
+#: Components/default/BlockAnchor/functions.php:64
+msgid "Copy link"
+msgstr ""
+
+#: Components/default/BlockAnchor/functions.php:63
+msgid ""
+"Copy the link and use it anywhere on the page to scroll to this position."
+msgstr ""
+
+#: inc/fieldVariables.php:22
+msgid "Dark"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:38
+#: Components/SiteHeader/functions.php:42
+msgid "Dark theme"
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:37
+#: Components/default/BlockSpacer/functions.php:37
+msgid "Distance"
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:34
+#: Components/default/BlockSpacer/functions.php:34
+msgid "Distance between two components."
+msgstr ""
+
+#: inc/timberDynamicResize.php:15
+msgid "Dynamic Image Generation"
+msgstr ""
+
+#: Components/EmailConfirm/functions.php:18
+msgid "E-mail confirmed!"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:24
+msgid "Edit Banner"
+msgstr ""
+
+#: inc/customPostTypes/company.php:24
+msgid "Edit Item"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:17
+msgid "Edit Reusable Components"
+msgstr ""
+
+#: Components/default/SliderImages/functions.php:60
+msgid "Enable Autoplay"
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:79
+msgid "Enter"
+msgstr ""
+
+#: Components/default/BlockAnchor/functions.php:25
+msgid "Enter a unique name to create an anchor link."
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:38
+msgid "Enter Password"
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:69
+msgid "Enter password"
+msgstr ""
+
+#: Components/PasswordRecovery/functions.php:23
+msgid ""
+"Enter the information you provided during registration. If you don't "
+"remember them, write to technical support."
+msgstr ""
+
+#: Components/default/BlockAnchor/functions.php:24
+msgid "Enter unique anchor name"
+msgstr ""
+
+#: Components/Error404/functions.php:15
+msgid "Error 404"
+msgstr ""
+
+#: lib/Utils/FileLoader.php:89
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:48
+#: Components/default/BlockSpacer/functions.php:48
+msgid "Examples"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:60
+#: Components/SiteHeader/functions.php:63
+#: Components/UserProfile/functions.php:48
+#: Components/UserProfile/functions.php:51
+msgid "Favourites"
+msgstr ""
+
+#: inc/customPostTypes/company.php:31 inc/customPostTypes/banner.php:31
+msgid "Featured Image"
+msgstr ""
+
+#: inc/theme.php:39
+msgid "Feed"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:39
+msgid "Filter banners list"
+msgstr ""
+
+#: Components/default/GridPostsArchive/functions.php:88
+#: Components/default/GridPostsArchive/functions.php:91
+msgid "Filter by"
+msgstr ""
+
+#: inc/customPostTypes/company.php:39
+msgid "Filter items list"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:26
+msgid "Filter reusable components list"
+msgstr ""
+
+#: inc/sliderOptions.php:35
+msgid "First Slide Text"
+msgstr ""
+
+#. Name of the theme
+msgid "Flynt"
+msgstr ""
+
+#: lib/Init.php:81
+msgid "Flynt is missing a required plugin"
+msgstr ""
+
+#: Components/SiteFooter/functions.php:12
+msgid "Foote Menu"
+msgstr ""
+
+#: Components/SiteFooter/functions.php:11
+msgid "Foote Nav"
+msgstr ""
+
+#: Components/default/NavigationFooter/functions.php:54
+msgid "Footer"
+msgstr ""
+
+#: inc/fieldVariables.php:41
+msgid "Full"
+msgstr ""
+
+#: inc/timberDynamicResize.php:16
+msgid "Generate images on-the-fly, when requested, not during initial render."
+msgstr ""
+
+#: Components/ListComponents/functions.php:108
+msgid "GitHub"
+msgstr ""
+
+#: Components/Error404/functions.php:21
+msgid "Go to Main page"
+msgstr ""
+
+#: inc/sliderOptions.php:61
+msgid "Go to slide {{index}}"
+msgstr ""
+
+#: Components/default/GridImageText/functions.php:11
+msgid "Grid: Image Text"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:40
+msgid "Grid: Posts Latest"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:11
+msgid "Header Nav"
+msgstr ""
+
+#: inc/tinyMce.php:73 inc/tinyMce.php:86
+msgid "Heading 1"
+msgstr ""
+
+#: inc/tinyMce.php:74 inc/tinyMce.php:91
+msgid "Heading 2"
+msgstr ""
+
+#: inc/tinyMce.php:75 inc/tinyMce.php:96
+msgid "Heading 3"
+msgstr ""
+
+#: inc/tinyMce.php:76 inc/tinyMce.php:101
+msgid "Heading 4"
+msgstr ""
+
+#: inc/tinyMce.php:77 inc/tinyMce.php:106
+msgid "Heading 5"
+msgstr ""
+
+#: inc/tinyMce.php:78 inc/tinyMce.php:111
+msgid "Heading 6"
+msgstr ""
+
+#: inc/tinyMce.php:82
+msgid "Headings"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://bleech.de/"
+msgstr ""
+
+#. URI of the theme
+msgid "https://www.flyntwp.com/"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:47
+msgid "Icon"
+msgstr ""
+
+#: inc/timberDynamicResize.php:24
+msgid ""
+"If Timber Dynamic Resize cannot resolve the path to images correctly, set "
+"the relative upload path manually."
+msgstr ""
+
+#: Components/default/BlockImage/functions.php:21
+#: Components/default/GridImageText/functions.php:48
+#: Components/default/BlockImageText/functions.php:30
+msgid "Image"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:45
+msgid "Image 1028 x 284"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:175
+msgid "Image 266 x 286"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:149
+msgid "Image 280 x 301"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:123
+msgid "Image 308 x 332"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:97
+msgid "Image 688 x 190"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:71
+msgid "Image 902 x 249"
+msgstr ""
+
+#: Components/default/BlockImageText/functions.php:25
+msgid "Image on the left"
+msgstr ""
+
+#: Components/default/BlockImageText/functions.php:26
+msgid "Image on the right"
+msgstr ""
+
+#: Components/default/BlockImageText/functions.php:21
+msgid "Image Position"
+msgstr ""
+
+#: Components/UserRegister/functions.php:17
+#: Components/default/BlockImage/functions.php:22
+#: Components/default/BlockImageText/functions.php:31
+msgid "Image-Format: JPG, PNG, SVG, WebP."
+msgstr ""
+
+#: Components/default/BlockVideoOembed/functions.php:34
+msgid ""
+"Image-Format: JPG, PNG, SVG, WebP. Aspect Ratio: 16:9. Recommended Size: "
+"1920px × 1080px."
+msgstr ""
+
+#: Components/default/GridImageText/functions.php:49
+msgid "Image-Format: JPG, PNG, SVG, WebP. Aspect Ratio: 3:2."
+msgstr ""
+
+#: Components/default/SliderImages/functions.php:38
+msgid "Image-Format: JPG, PNG, WebP."
+msgstr ""
+
+#: Components/default/SliderImages/functions.php:37
+msgid "Images"
+msgstr ""
+
+#: Components/default/BlockPostHeader/functions.php:38
+msgid "in"
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:56
+msgid "Input – Aria Label"
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:66
+msgid "Input – Placeholder"
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:76
+msgid "Input – Submit"
+msgstr ""
+
+#: inc/customPostTypes/company.php:35 inc/customPostTypes/banner.php:35
+msgid "Insert into item"
+msgstr ""
+
+#: inc/customPostTypes/company.php:17
+msgid "Item Archives"
+msgstr ""
+
+#: inc/customPostTypes/company.php:18
+msgid "Item Attributes"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:39
+#: Components/default/GridImageText/functions.php:40
+msgid "Items"
+msgstr ""
+
+#: inc/customPostTypes/company.php:37
+msgid "Items list"
+msgstr ""
+
+#: inc/customPostTypes/company.php:38
+msgid "Items list navigation"
+msgstr ""
+
+#: inc/theme.php:34 Components/ListComponents/functions.php:138
+#: Components/FormPasswordProtection/functions.php:44
+#: Components/default/GridPostsLatest/functions.php:119
+#: Components/default/NavigationFooter/functions.php:39
+#: Components/default/NavigationMain/functions.php:27
+#: Components/default/ListSearchResults/functions.php:31
+#: Components/default/BlockPostFooter/functions.php:14
+#: Components/default/NavigationBurger/functions.php:27
+#: Components/default/GridPostsArchive/functions.php:76
+#: Components/default/BlockPostHeader/functions.php:14
+msgid "Labels"
+msgstr ""
+
+#: inc/sliderOptions.php:46
+msgid "Last Slide Text"
+msgstr ""
+
+#: Components/LeadArticle/functions.php:38
+msgid "Lead Article"
+msgstr ""
+
+#: Components/default/BlockNotFound/functions.php:27
+msgid "Leave empty to remove back to home link below the content area."
+msgstr ""
+
+#: inc/fieldVariables.php:63
+msgid "Left"
+msgstr ""
+
+#: inc/fieldVariables.php:21
+msgid "Light"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:30
+#: Components/SocialLinks/functions.php:66
+msgid "Link"
+msgstr ""
+
+#: Components/default/BlockAnchor/functions.php:62
+msgid "Link copied"
+msgstr ""
+
+#: Components/ListComponents/functions.php:57
+msgid "List: Components"
+msgstr ""
+
+#: Components/BreakingArticle/functions.php:38
+msgid "LIVE"
+msgstr ""
+
+#: Components/SearchResults/functions.php:22
+#: Components/SearchResults/functions.php:26
+#: Components/VideoArticles/functions.php:9
+#: Components/VideoArticles/functions.php:13
+#: Components/ListArticles/functions.php:26
+#: Components/ListArticles/functions.php:30
+#: Components/default/GridPostsArchive/functions.php:118
+#: Components/default/GridPostsArchive/functions.php:121
+msgid "Load More"
+msgstr ""
+
+#: Components/default/GridPostsArchive/functions.php:50
+msgid "Load More Button?"
+msgstr ""
+
+#: Components/EmailConfirm/functions.php:27
+#: Components/EmailConfirm/functions.php:30
+msgid "Login"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:72
+#: Components/SiteHeader/functions.php:75
+#: Components/UserProfile/functions.php:60
+#: Components/UserProfile/functions.php:63
+msgid "Logout"
+msgstr ""
+
+#: Components/default/NavigationMain/functions.php:42
+#: Components/default/NavigationBurger/functions.php:42
+msgid "Main"
+msgstr ""
+
+#: inc/theme.php:60
+msgid "Main Content – Aria Label"
+msgstr ""
+
+#: Components/default/GridImageText/functions.php:83
+msgid "Max Columns"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:87
+msgid "Max Posts"
+msgstr ""
+
+#: inc/fieldVariables.php:39
+msgid "Medium"
+msgstr ""
+
+#: Components/PostHeader/functions.php:76
+#: Components/PostHeader/functions.php:82
+#: Components/PostHeader/functions.php:88
+msgid "minutes"
+msgstr ""
+
+#: Components/PostHeader/functions.php:79
+msgid "Minutes Double"
+msgstr ""
+
+#: Components/PostHeader/functions.php:85
+msgid "Minutes Multiple"
+msgstr ""
+
+#: Components/PostHeader/functions.php:73
+msgid "Minutes Single"
+msgstr ""
+
+#: Components/default/NavigationBurger/functions.php:11
+msgid "Navigation Burger"
+msgstr ""
+
+#: Components/default/NavigationFooter/functions.php:10
+msgid "Navigation Footer"
+msgstr ""
+
+#: Components/default/NavigationMain/functions.php:11
+msgid "Navigation Main"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:23
+msgid "New Banner"
+msgstr ""
+
+#: inc/customPostTypes/company.php:23
+msgid "New Item"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:16
+msgid "New Reusable Components"
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:53
+#: Components/default/ListSearchResults/functions.php:56
+#: Components/default/GridPostsArchive/functions.php:108
+#: Components/default/GridPostsArchive/functions.php:111
+msgid "Next"
+msgstr ""
+
+#: inc/sliderOptions.php:18
+msgid "Next Slide"
+msgstr ""
+
+#: inc/sliderOptions.php:15
+msgid "Next Slide Button Text"
+msgstr ""
+
+#: Components/FeatureFlexibleContentExtension/functions.php:13
+msgid "No components found"
+msgstr ""
+
+#: Components/default/GridPostsArchive/functions.php:131
+msgid "No post found."
+msgstr ""
+
+#: Components/default/GridPostsArchive/functions.php:128
+msgid "No Posts Found Text"
+msgstr ""
+
+#: Components/SearchResults/functions.php:14
+#: Components/default/ListSearchResults/functions.php:95
+msgid "No Results"
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:98
+msgid "No results found."
+msgstr ""
+
+#: Components/SearchResults/functions.php:18
+msgid "No results were found for your request."
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:22
+msgid "No reusable components found"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:23
+msgid "No reusable components found in Trash"
+msgstr ""
+
+#: Components/default/BlockNotFound/functions.php:23
+msgid "Not Found"
+msgstr ""
+
+#: inc/customPostTypes/company.php:29 inc/customPostTypes/banner.php:29
+msgid "Not found"
+msgstr ""
+
+#: inc/customPostTypes/company.php:30 inc/customPostTypes/banner.php:30
+msgid "Not found in Trash"
+msgstr ""
+
+#: lib/Init.php:57
+msgid "One or more required plugins are not activated!"
+msgstr ""
+
+#: Components/ListComponents/functions.php:117
+#: Components/default/TestComponent/functions.php:19
+#: Components/default/GridPostsLatest/functions.php:73
+#: Components/default/BlockImage/functions.php:30
+#: Components/default/SliderImages/functions.php:47
+#: Components/default/BlockSpacer/functions.php:19
+#: Components/default/GridImageText/functions.php:69
+#: Components/default/BlockImageText/functions.php:47
+#: Components/default/BlockVideoOembed/functions.php:51
+#: Components/default/BlockWysiwyg/functions.php:29
+#: Components/default/GridPostsArchive/functions.php:171
+msgid "Options"
+msgstr ""
+
+#: inc/fieldGroups/pageComponents.php:9 inc/fieldGroups/pageComponents.php:14
+msgid "Page Components"
+msgstr ""
+
+#: inc/sliderOptions.php:57
+msgid "Pagination Bullet Message"
+msgstr ""
+
+#: inc/tinyMce.php:72 inc/tinyMce.php:139
+msgid "Paragraph"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:19
+msgid "Parent Banner:"
+msgstr ""
+
+#: inc/customPostTypes/company.php:19
+msgid "Parent Item:"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:13
+msgid "Parent Reusable Component:"
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:59
+msgid "Password"
+msgstr ""
+
+#: Components/PasswordRecovery/functions.php:17
+msgid "Password recovery"
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:63
+msgid "Placeholder - Search"
+msgstr ""
+
+#. %1$s, %2$s: link wrapper.
+#: lib/Init.php:61
+#, php-format
+msgid ""
+"Please %1$sactivate or install the required plugin(s)%2$s and reload the "
+"page."
+msgstr ""
+
+#: Components/PopularTags/functions.php:30
+msgid "Popular tags"
+msgstr ""
+
+#: inc/fieldGroups/postComponents.php:8
+msgid "Post Components"
+msgstr ""
+
+#: Components/default/BlockPostFooter/functions.php:35
+#: Components/default/BlockPostFooter/functions.php:38
+#: Components/default/BlockPostHeader/functions.php:26
+#: Components/default/BlockPostHeader/functions.php:29
+msgid "Posted by"
+msgstr ""
+
+#: Components/default/BlockVideoOembed/functions.php:33
+msgid "Poster Image"
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:46
+#: Components/default/GridPostsArchive/functions.php:101
+msgid "Prev"
+msgstr ""
+
+#: Components/ListComponents/functions.php:103
+#: Components/ListComponents/functions.php:160
+#: Components/ListComponents/functions.php:163
+msgid "Preview"
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:43
+#: Components/default/GridPostsArchive/functions.php:98
+msgid "Previous"
+msgstr ""
+
+#: inc/sliderOptions.php:28
+msgid "Previous Slide"
+msgstr ""
+
+#: inc/sliderOptions.php:25
+msgid "Previous Slide Button Text"
+msgstr ""
+
+#: Components/RalatedNews/functions.php:12
+msgid "Ralated news"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:152
+#: Components/default/GridPostsLatest/functions.php:155
+#: Components/default/ListSearchResults/functions.php:85
+#: Components/default/ListSearchResults/functions.php:88
+#: Components/default/GridPostsArchive/functions.php:159
+#: Components/default/GridPostsArchive/functions.php:162
+msgid "Read More"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:33
+msgid "Read the news wherever it is convenient for you on our social networks"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:131
+#: Components/default/GridPostsArchive/functions.php:148
+#: Components/default/BlockPostHeader/functions.php:44
+msgid "Reading Time - (20) min read"
+msgstr ""
+
+#: Components/RelatedCompanies/functions.php:12
+msgid "Related companies"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:113
+msgid "Related Posts"
+msgstr ""
+
+#: inc/timberDynamicResize.php:23
+msgid "Relative Upload Path"
+msgstr ""
+
+#: inc/customPostTypes/company.php:33 inc/customPostTypes/banner.php:33
+msgid "Remove featured image"
+msgstr ""
+
+#: Components/ReusableComponent/functions.php:9
+msgid "Reusable"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:11
+msgid "Reusable Component Archives"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:12
+msgid "Reusable Component Attributes"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:10
+#: inc/fieldGroups/reusableComponents.php:9
+#: inc/fieldGroups/reusableComponents.php:15
+msgid "Reusable Components"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:24
+msgid "Reusable components list"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:25
+msgid "Reusable components list navigation"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:50
+#: Components/default/ListSearchResults/functions.php:78
+msgid "Search"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:28
+msgid "Search Banner"
+msgstr ""
+
+#: inc/customPostTypes/company.php:28
+msgid "Search Item"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:46
+#: Components/SearchHeader/functions.php:22
+msgid "Search Placeholder"
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:26
+msgid "Search Result"
+msgstr ""
+
+#: Components/SearchHeader/functions.php:18
+msgid "Search results for:"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:21
+msgid "Search Reusable Components"
+msgstr ""
+
+#: Components/SearchHeader/functions.php:14
+msgid "Search Title"
+msgstr ""
+
+#: Components/SearchHeader/functions.php:26
+#: Components/default/ListSearchResults/functions.php:68
+msgid "Search …"
+msgstr ""
+
+#: Components/FeatureFlexibleContentExtension/functions.php:12
+msgid "Search..."
+msgstr ""
+
+#: Components/BreakingArticle/functions.php:48
+msgid "See more"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:145
+msgid "See More Posts"
+msgstr ""
+
+#: Components/default/GridPostsLatest/functions.php:60
+msgid "Select 1 or more categories or leave empty to show from all posts."
+msgstr ""
+
+#: Components/ReusableComponent/functions.php:12
+msgid "Select Reusable Component"
+msgstr ""
+
+#: inc/customPostTypes/company.php:32 inc/customPostTypes/banner.php:32
+msgid "Set featured image"
+msgstr ""
+
+#: Components/PostHeader/functions.php:91
+#: Components/PostHeader/functions.php:94
+msgid "Share"
+msgstr ""
+
+#: Components/default/GridImageText/functions.php:92
+msgid "Show as Card"
+msgstr ""
+
+#: inc/fieldVariables.php:32
+msgid "Size"
+msgstr ""
+
+#: inc/theme.php:50 inc/theme.php:53
+msgid "Skip to main content"
+msgstr ""
+
+#: Components/default/SliderImages/functions.php:20
+msgid "Slider: Images"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:24
+msgid "Subscribe to Snap&Get"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:66
+#: Components/SiteHeader/functions.php:69
+#: Components/UserProfile/functions.php:54
+#: Components/UserProfile/functions.php:57
+msgid "Support"
+msgstr ""
+
+#: Components/BreakingArticle/functions.php:35
+msgid "Tag"
+msgstr ""
+
+#: Components/default/BlockPostFooter/functions.php:26
+#: Components/default/BlockPostFooter/functions.php:29
+msgid "Tags"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:55
+msgid "Telegram"
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:16
+msgid "TestComponent"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:30
+#: Components/PasswordRecovery/functions.php:20
+#: Components/SiteFooter/functions.php:34 Components/Error404/functions.php:9
+#: Components/EmailConfirm/functions.php:21
+#: Components/FormPasswordProtection/functions.php:30
+#: Components/default/NavigationFooter/functions.php:29
+#: Components/default/BlockNotFound/functions.php:16
+#: Components/default/GridImageText/functions.php:56
+#: Components/default/BlockImageText/functions.php:39
+#: Components/default/BlockWysiwyg/functions.php:21
+msgid "Text"
+msgstr ""
+
+#: inc/sliderOptions.php:36
+msgid "Text for previous button when swiper is on first slide."
+msgstr ""
+
+#: inc/sliderOptions.php:47
+msgid "Text for previous button when swiper is on last slide."
+msgstr ""
+
+#: inc/sliderOptions.php:10
+msgid "Text labels for screen readers."
+msgstr ""
+
+#: Components/EmailConfirm/functions.php:24
+msgid "Thank you for registering"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"The lightning-fast WordPress Starter Theme for component-based websites with "
+"ACF Pro."
+msgstr ""
+
+#: Components/default/BlockNotFound/functions.php:23
+msgid "The page you are looking for does not exist."
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:64
+msgid "The text for the input field."
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:75
+msgid "The text for the search button"
+msgstr ""
+
+#: inc/fieldVariables.php:12
+msgid "Theme"
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:39
+msgid "This content is password protected."
+msgstr ""
+
+#: inc/sliderOptions.php:39
+msgid "This is the first slide"
+msgstr ""
+
+#: inc/sliderOptions.php:50
+msgid "This is the last slide"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:21
+#: Components/RelatedCompanies/functions.php:9
+#: Components/RalatedNews/functions.php:9
+#: Components/PasswordRecovery/functions.php:14
+#: Components/PopularTags/functions.php:27
+#: Components/EmailConfirm/functions.php:15
+#: Components/ListComponents/functions.php:67
+#: Components/default/GridPostsLatest/functions.php:50
+#: Components/default/GridPostsLatest/functions.php:109
+#: Components/default/SliderImages/functions.php:30
+#: Components/default/ListSearchResults/functions.php:21
+#: Components/default/GridImageText/functions.php:31
+#: Components/default/GridPostsArchive/functions.php:67
+msgid "Title"
+msgstr ""
+
+#: Components/default/GridImageText/functions.php:21
+msgid "Title Alignment"
+msgstr ""
+
+#: Components/default/ListSearchResults/functions.php:22
+msgid "Title of the search Page."
+msgstr ""
+
+#: Components/FormPasswordProtection/functions.php:40
+msgid "To view it please enter your password below:"
+msgstr ""
+
+#: Components/default/NavigationBurger/functions.php:49
+#: Components/default/NavigationBurger/functions.php:52
+msgid "Toggle Menu"
+msgstr ""
+
+#: inc/fieldGroups/bannerComponents.php:12
+msgid "Type"
+msgstr ""
+
+#: Components/Error404/functions.php:15
+msgid ""
+"Unfortunately, the requested page was not found. You may have followed "
+"a link in which there was an error, or the resource was deleted."
+msgstr ""
+
+#: inc/customPostTypes/banner.php:25
+msgid "Update Banner"
+msgstr ""
+
+#: inc/customPostTypes/company.php:25
+msgid "Update Item"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:18
+msgid "Update Reusable Components"
+msgstr ""
+
+#: inc/customPostTypes/company.php:36 inc/customPostTypes/banner.php:36
+msgid "Uploaded to this item"
+msgstr ""
+
+#: inc/customPostTypes/company.php:34 inc/customPostTypes/banner.php:34
+msgid "Use as featured image"
+msgstr ""
+
+#: inc/fieldGroups/userComponents..php:8
+msgid "User Components"
+msgstr ""
+
+#: Components/SiteHeader/functions.php:54
+#: Components/SiteHeader/functions.php:57
+#: Components/UserProfile/functions.php:42
+#: Components/UserProfile/functions.php:45
+msgid "User Profile"
+msgstr ""
+
+#: Components/default/TestComponent/functions.php:33
+#: Components/default/BlockSpacer/functions.php:33
+msgid "Vertical space"
+msgstr ""
+
+#: Components/default/BlockVideoOembed/functions.php:42
+msgid "Video"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:26
+msgid "View Banner"
+msgstr ""
+
+#: inc/customPostTypes/banner.php:27
+msgid "View Banners"
+msgstr ""
+
+#: inc/customPostTypes/company.php:26
+msgid "View Item"
+msgstr ""
+
+#: inc/customPostTypes/company.php:27
+msgid "View Items"
+msgstr ""
+
+#: inc/customPostTypes/reusable-components.php:19
+#: inc/customPostTypes/reusable-components.php:20
+msgid "View Reusable Components"
+msgstr ""
+
+#: Components/PostHeader/functions.php:58
+#: Components/PostHeader/functions.php:64
+#: Components/PostHeader/functions.php:70
+msgid "views"
+msgstr ""
+
+#: Components/PostHeader/functions.php:61
+msgid "Views Double"
+msgstr ""
+
+#: Components/PostHeader/functions.php:67
+msgid "Views Multiple"
+msgstr ""
+
+#: Components/PostHeader/functions.php:55
+msgid "Views Single"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:56
+msgid "VK"
+msgstr ""
+
+#: Components/ListComponents/functions.php:68
+#: Components/default/GridPostsLatest/functions.php:51
+#: Components/default/GridPostsLatest/functions.php:110
+#: Components/default/SliderImages/functions.php:31
+#: Components/default/GridImageText/functions.php:32
+#: Components/default/GridPostsArchive/functions.php:68
+msgid ""
+"Want to add a headline? And a paragraph? Go ahead! Or just leave it empty "
+"and nothing will be shown."
+msgstr ""
+
+#: inc/fieldVariables.php:40
+msgid "Wide"
+msgstr ""
+
+#: Components/PostFooter/functions.php:41
+msgid "Written by"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:58
+msgid "X"
+msgstr ""
+
+#: Components/SocialLinks/functions.php:57
+msgid "YouTube"
+msgstr ""

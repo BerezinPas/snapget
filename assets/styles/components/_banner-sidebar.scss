@@ -1,0 +1,43 @@
+.banner-sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 20px;
+
+  @media (min-width: $tablet) {
+    margin: 0;
+    padding: 14px 0;
+    background: var(--fill-fill-surface, #FFF);
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0;
+  }
+}
+
+.banner-sidebar__link {
+  display: block;
+  width: 266px;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @media (min-width: $desktop) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.banner-sidebar__picture {
+  height: 100%;
+}
+
+.banner-sidebar__image {
+  @media (min-width: $desktop) {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

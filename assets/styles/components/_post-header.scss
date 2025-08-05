@@ -1,0 +1,137 @@
+.post-header {
+  display: flex;
+  padding-top: 12px;
+  margin-bottom: 36px;
+  flex-flow: column;
+}
+
+.post-header__title {
+  margin-bottom: 16px;
+  @extend %headline-large;
+  overflow-wrap: anywhere;
+  color: var(--text-text-title-default, #1A1A1A);
+}
+
+.post-header__text {
+  margin-bottom: 28px;
+  color: var(--text-text-title-default, #1A1A1A);
+  @extend %subtitle-small;
+  font-variant-numeric: lining-nums proportional-nums;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // stylelint-disable-next-line
+  display: -webkit-box;
+   -webkit-line-clamp: 4;
+   -webkit-box-orient: vertical;
+}
+
+.post-header__meta {
+  padding-top: 8px;
+  padding-bottom: 4px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 12px 4px;
+  color: var(--color-light-text-body-default, #545454);
+  font-variant-numeric: lining-nums proportional-nums;
+  @extend %caption-medium;
+
+  @media (min-width: $tablet) {
+    gap: 4px;
+  }
+}
+
+.post-header__tags {
+  width: 100%;
+  margin-right: 12px;
+  margin-bottom: 4px;
+  display: flex;
+  gap: 4px;
+
+  @media (min-width: $tablet) {
+    width: fit-content;
+    margin-bottom: 0;
+  }
+}
+
+.post-header__date {
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.post-header__views {
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.post-header__reading {
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.post-header__favourite-button {
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  rect {
+    fill: var(--text-text-caption-default, #6B7199);
+  }
+
+  &.is-active {
+    rect {
+      fill: var(--fill-fill-brand-primary, #802cd9);
+    }
+  }
+}
+
+.post-header__divider {
+  display: none;
+  width: 1px;
+  height: 26px;
+  background: var(--color-light-border-system-border, #DEDEDE);
+
+  @media (min-width: $tablet) {
+    display: block;
+  }
+}
+
+.post-header__figure {
+  margin-top: calc(12px + 36px) !important;
+  margin-bottom: 0  !important;
+}
+
+.post-header__image {
+  width: 100%;
+}
+
+.post-header__caption {
+  margin-bottom: 0 !important;
+}
+
+.post-header__share-button {
+  margin-left: 8px;
+  cursor: pointer;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.post-header__share-content {
+  display: none;
+}
+
+.post-header__share-title {
+  margin-bottom: 32px;
+  @extend %title-medium;
+  font-variant-numeric: lining-nums proportional-nums;
+  color: var(--text-text-title-default, #1A1A1A);
+}
+
+.post-header__share-links {
+  display: flex;
+  gap: 16px;
+}

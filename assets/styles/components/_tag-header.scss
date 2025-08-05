@@ -1,0 +1,23 @@
+.tag-header {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: 32px 20px 32px 36px;
+  gap: 16px 28px;
+  align-self: stretch;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+
+  @media (min-width: $tablet) {
+    flex-flow: row wrap;
+    align-items: center;
+  }
+}
+
+.tag-header__title {
+  flex: 1 0 0;
+  color: var(--text-text-title-default, #1A1A1A);
+  @extend %headline-large;
+  text-transform: capitalize;
+  overflow-wrap: anywhere;
+}

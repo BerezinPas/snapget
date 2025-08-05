@@ -1,0 +1,137 @@
+/* font/title/large H2 */
+%title-large {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px; /* 128.571% */
+  letter-spacing: -0.3px;
+}
+
+/* font-blog/title/medium */
+%title-medium {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+  letter-spacing: -0.1px;
+}
+
+/* font-blog/title/small */
+%title-small {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 133.333% */
+}
+
+/* font-blog/subtitle/large */
+%subtitle-large {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px; /* 122.727% */
+  letter-spacing: -0.3px;
+}
+
+/* font-blog/subtitle/medium */
+%subtitle-medium {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 155.556% */
+}
+
+/* font-blog/subtitle/small */
+%subtitle-small {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 141.176% */
+}
+
+/* font/subtitle/middle */
+%subtitle-middle {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 133.333% */
+  letter-spacing: 0.1px;
+}
+
+/* font-blog/body/medium */
+%body-medium {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 133.333% */
+}
+
+/* font-blog/body/large */
+%body-large {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+}
+
+/* font-blog/body/list */
+%body-list {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+}
+
+/* font-blog/headline/large */
+%headline-large {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px; /* 108.333% */
+  letter-spacing: -2px;
+}
+
+/* font-blog/headline/medium */
+%headline-medium {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 48px; /* 109.091% */
+  letter-spacing: -1.76px;
+}
+
+/* font-blog/headline/small */
+%headline-small {
+  font-size: 37px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 44px; /* 118.919% */
+  letter-spacing: -0.5px;
+}
+
+/* font/button/middle */
+%button-middle {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 10px; /* 76.923% */
+  letter-spacing: 0.2px;
+}
+
+/* font-blog/caption/medium */
+%caption-medium {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 153.846% */
+  letter-spacing: 0.1px;
+}
+
+/* font/button/large */
+%button-large {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px; /* 80% */
+  letter-spacing: 0.2px;
+}

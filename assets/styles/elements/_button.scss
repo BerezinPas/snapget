@@ -1,0 +1,15 @@
+%button,
+.button {
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 28px;
+  line-height: 20px; /* 133.333% */
+  @extend %title-small;
+  font-variant-numeric: lining-nums proportional-nums;
+  text-align: center;
+  color: var(--text-text-primary-default, #802CD9);
+  cursor: pointer;
+}

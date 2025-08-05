@@ -1,0 +1,11 @@
+{% if posts|length > 0 %}
+  <section class="video-news">
+    <div class="video-news__title">{{ term.name }}</div>
+    <div class="video-news__posts">
+      {% for post in posts %}
+        {{ renderComponent('VideoArticle', { sidebar: true }) }}
+      {% endfor %}
+    </div>
+    <a class="video-news__link button-secondary" href="{{ term.link }}">{{ button }}</a>
+  </section>
+{% endif %}

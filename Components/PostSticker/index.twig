@@ -1,0 +1,18 @@
+{% if sticker|trim is not empty %}
+<link rel="stylesheet" href="{{ theme.path }}/Components/PostSticker/sticker.css?ver={{ theme.version }}" />
+<div class="animated-text {{ sticker_type }}" data-component="sticker">
+  <div class="text-wrapper">
+    {{ sticker|raw }}
+  </div>
+</div>
+<div class="animated-text-2 {{ sticker_type }}" data-component="sticker">
+  <div class="text-wrapper">
+    {{ sticker|raw }}
+  </div>
+</div>
+<div class="animated-text-3 {{ sticker_type }}" data-component="sticker">
+  <div class="text-wrapper">
+    {{ sticker|raw }}
+  </div>
+</div>
+{% endif %}

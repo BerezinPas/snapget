@@ -1,0 +1,108 @@
+// .breaking-article {
+//   display: flex;
+//   padding: 16px 24px;
+//   align-items: center;
+//   gap: 12px;
+//   border-radius: 12px;
+//   border-bottom: 1px solid var(--border-border-system, #DEDEDE);
+//   background: var(--fill-fill-surface, #FFF);
+// }
+
+// .breaking-article__tag {
+//   @extend .article-chips;
+// }
+
+// .breaking-article__title {
+//   display: flex;
+//   height: 24px;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex: 1 0 0;
+
+//   overflow: hidden;
+//   color: var(--text-text-title-default, #1A1A1A);
+//   font-variant-numeric: lining-nums proportional-nums;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+
+//   /* font-blog/title/small */
+//   font-family: Inter;
+//   font-size: 15px;
+//   font-style: normal;
+//   font-weight: 500;
+//   line-height: 20px; /* 133.333% */
+// }
+
+// .breaking-article__button {
+//   @extend .button;
+// }
+
+
+// flynt-component[name='TestComponent'] {
+//   &[data-status='collapse'] {
+//     margin-block-start: calc((-1 * var(--component-spacing)) + (var(--percentage-distance) * var(--component-spacing) ) / 100);
+//   }
+
+//   &[data-status='expand'] {
+//     margin-block-start: calc((var(--percentage-distance) * var(--component-spacing) ) / 100);
+
+//     &[data-theme] {
+//       margin-block-start: 0;
+//       padding-block-start: calc((var(--percentage-distance) * var(--component-spacing) ) / 100);
+//     }
+//   }
+
+//   &[data-theme][data-status='collapse'] + .componentSpacing {
+//     &[data-theme] {
+//       margin-block-start: 0;
+//       padding-block-start: 0;
+//     }
+//   }
+
+//   &[data-theme][data-status='expand'] + .componentSpacing {
+//     &[data-theme] {
+//       margin-block-start: calc(-1 * var(--component-spacing));
+//       padding-block-start: 0;
+//     }
+//   }
+
+//   .breaking-article {
+//     display: flex;
+//     width: 1028px;
+//     padding: 16px 24px;
+//     align-items: center;
+//     gap: 12px;
+//     border-radius: 12px;
+//     border-bottom: 1px solid var(--border-border-system, #DEDEDE);
+//     background: var(--fill-fill-surface, #FFF);
+//   }
+
+//   .breaking-article__tag {
+//     @extend .article-chips;
+//   }
+
+//   .breaking-article__title {
+//     display: flex;
+//     height: 24px;
+//     flex-direction: column;
+//     justify-content: center;
+//     flex: 1 0 0;
+
+//     overflow: hidden;
+//     color: var(--text-text-title-default, #1A1A1A);
+//     font-variant-numeric: lining-nums proportional-nums;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+
+//     /* font-blog/title/small */
+//     font-family: Inter;
+//     font-size: 15px;
+//     font-style: normal;
+//     font-weight: 500;
+//     line-height: 20px; /* 133.333% */
+//   }
+
+//   .breaking-article__button {
+//     @extend .button;
+//   }
+// }

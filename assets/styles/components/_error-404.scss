@@ -1,0 +1,30 @@
+.error-404 {
+  height: fit-content;
+  display: flex;
+  padding: 52px 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+}
+
+.error-404__text {
+  h1 {
+    margin-bottom: 12px;
+    @extend %headline-medium;
+    text-align: center;
+    color: var(--text-text-title-default, #1A1A1A);
+  }
+
+  p {
+    @extend %body-large;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: var(--text-text-title-default, #1A1A1A);
+
+    @media (min-width: $desktop) {
+      padding: 0 50px;
+    }
+  }
+}

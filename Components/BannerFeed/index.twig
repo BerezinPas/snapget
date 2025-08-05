@@ -1,0 +1,11 @@
+<section class="banner-feed">
+  <a class="banner-feed__link" href="{{ banner.meta('link') }}" target="_blank">
+    <picture class="banner-feed__picture">
+      <source type="image/jpeg" media="(min-width: 1440px)" srcset="{{ banner.meta('image_1028') }}">
+      <source type="image/jpeg" media="(min-width: 1280px)" srcset="{{ banner.meta('image_902') }}">
+      <source type="image/jpeg" media="(min-width: 744px)" srcset="{{ banner.meta('image_688') }}">
+      <source type="image/jpeg" media="(max-width: 743px)" srcset="{{ banner.meta('image_308') }}">
+      <img class="banner-feed__image" src="{{ banner.meta('image_1028') }}" alt="">
+    </picture>
+  </a>
+</section>

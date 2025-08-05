@@ -1,0 +1,21 @@
+<footer class="post-footer">
+  <div class="post-footer__meta">
+    <div class="post-footer__author">{{ author }} <a href="{{ site.url }}">{{ site.name }}</a>{{ post_date }}</div>
+    {% if post.tags %}
+      <div class="post-footer__tags">
+        {% for tag in post.tags %}
+          <a class="post-footer__tag article-chips" href="{{ tag.link }}">{{ tag.title }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+  {% if socials %}
+    <div class="post-footer__social">
+      {% for item in socials %}
+        <a class="post-footer__social-link" href="{{ item.link }}" target="_blank">
+          <img class="post-footer__social-icon" src="{{ theme.uri }}/assets/icons/icon-{{ item.icon }}.svg" alt="">
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</footer>

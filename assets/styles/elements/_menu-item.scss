@@ -1,0 +1,18 @@
+.menu-item {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  white-space: nowrap;
+  @extend %title-small;
+  font-variant-numeric: lining-nums proportional-nums;
+  color: var(--text-text-title-default, #1A1A1A);
+
+  &:hover {
+    color: var(--text-text-title-hover, #202020);
+  }
+
+  &.is-active {
+    color: var(--text-text-primary-default, #802CD9);
+    border-bottom: 2px solid var(--color-light-brand-primary, #802CD9);
+  }
+}

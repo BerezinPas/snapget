@@ -1,0 +1,21 @@
+.video-news {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+}
+
+.video-news__title {
+  @extend %title-medium;
+  font-variant-numeric: lining-nums proportional-nums;
+  text-transform: capitalize;
+  color: var(--text-text-title-default, #1A1A1A);
+}
+
+.video-news__posts {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}

@@ -1,0 +1,29 @@
+<flynt-component name="ListArticles">
+  <section class="list-articles">
+    {% if posts|length %}
+      <div class="list-articles__posts" data-ref="posts">
+        {% for post in posts %}
+          {% if loop.index == 1 %}
+            {% set index = paged == 0 ? paged : paged - 1 %}
+            {% if banners[index] %}
+              <div class="list-articles__banner">
+                {{ renderComponent('BannerFeed', { banner: banners[index], banner_id: banners[index].id }) }}
+              </div>
+            {% endif %}
+          {% endif %}
+          <div class="list-articles__divider"></div>
+          {{ renderComponent('ListArticle', { post: post }) }}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% set pagination = posts.pagination %}
+    {% if pagination.pages %}
+      {% if pagination.next %}
+      <div class="list-articles__pagination" data-ref="pagination">
+        <a class="list-articles__button button-new" data-ref="loadMore" href="{{ pagination.next.link|e('esc_url') }}">{{ load_more }}</a>
+      </div>
+      {% endif %}
+    {% endif %}
+  </section>
+</flynt-component>

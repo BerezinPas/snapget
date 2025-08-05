@@ -1,0 +1,15 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <section class="site-tag">
+    {{ renderComponent('BreakingArticle') }}
+    {{ renderComponent('TagHeader') }}
+    {{ renderComponent('CardArticles', { posts: card_articles }) }}
+    {{ renderComponent('ListArticles', { posts: posts }) }}
+  </section>
+  <aside class="site-sidebar">
+    {{ renderComponent('BannerSidebar') }}
+    {{ renderComponent('PopularTags') }}
+    {{ renderComponent('SocialLinks') }}
+  </aside>
+{% endblock %}

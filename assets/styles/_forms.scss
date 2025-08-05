@@ -1,0 +1,139 @@
+.wpcf7-form,
+.wppb-user-forms {
+  width: 100%;
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"] {
+    display: flex;
+    height: 52px;
+    padding: 0px 16px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+    border: 1px solid var(--border-border-input-default, #DEDEDE);
+    background: var(--fill-fill-surface, #FFF);
+    color: var(--text-text-input-default, #686868);
+    @extend %body-medium;
+    outline: none;
+
+    &::placeholder {
+      overflow: hidden;
+      @extend %body-medium;
+      color: var(--text-text-input-default, #686868);
+    }
+  }
+
+  textarea {
+    min-height: 104px;
+    padding: 16px;
+    border-radius: 20px 20px 8px;
+    border: 1px solid var(--border-border-input-default, #DEDEDE);
+    background: var(--fill-fill-surface, #FFF);
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .button {
+    width: 100%;
+    min-width: 220px;
+    height: 52px;
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border: 0px;
+    border-radius: 32px;
+    background: var(--fill-button-primary-default, #802CD9);
+    color: var(--text-button-primary-default, #FFF);
+    @extend %button-large;
+  }
+
+  .wppb-checkboxes {
+    li {
+      display: flex;
+    }
+
+    label {
+      display: block !important;
+      margin-top: 18px !important;
+    }
+  }
+
+  .form-submit {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.wppb-form-field {
+  position: relative;
+  padding-bottom: 16px;
+
+  &.wppb-upload {
+    margin-bottom: 32px;
+
+    label {
+      display: none !important;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+
+      border-radius: 20px;
+      // border: 2px solid var(--border-border-system, #DEDEDE);
+    }
+  }
+
+  &.login-remember {
+    display: none !important;
+  }
+
+  &.pbpl-class label {
+    text-indent: unset;
+    position: relative;
+    left: 0;
+
+    position: absolute;
+    left: 12px;
+    top: -10px;
+
+    width: fit-content;
+
+    display: flex;
+    padding: 0px 4px;
+    align-items: center;
+
+    color: var(--text-text-input-default, #686868);
+    @extend %caption-medium;
+
+    background: var(--fill-fill-surface, #FFF);
+
+    z-index: 99;
+  }
+
+  label {
+    width: auto;
+    @extend %body-medium;
+    color: var(--text-text-body-default, #262626);
+  }
+}
+
+.wpcf7-form-control {
+  margin-bottom: 16px;
+}
+
+.wppb-error,
+.wppb-warning {
+  margin-bottom: 16px;
+  @extend %caption-medium;
+  color: var(--text-text-danger-default, #D92550);
+
+}

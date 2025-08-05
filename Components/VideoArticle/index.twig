@@ -1,0 +1,21 @@
+<a class="video-article" href="{{ post.link }}">
+  <div class="video-article__media">
+    <picture class="video-article__picture">
+    {# {% if sidebar == true %}
+      <source type="image/jpeg" media="(min-width: 1440px)" srcset="{{ post.thumbnail.src('sidebar-large') }}">
+      <source type="image/jpeg" media="(min-width: 1280px)" srcset="{{ post.thumbnail.src('sidebar-desktop') }}">
+      <source type="image/jpeg" media="(min-width: 744px)" srcset="{{ post.thumbnail.src('sidebar-tablet') }}">
+      <source type="image/jpeg" media="(max-width: 743px)" srcset="{{ post.thumbnail.src('sidebar-mobile') }}">
+    {% else %}
+      <source type="image/jpeg" media="(min-width: 1440px)" srcset="{{ post.thumbnail.src('video-large') }}">
+      <source type="image/jpeg" media="(min-width: 1280px)" srcset="{{ post.thumbnail.src('video-desktop') }}">
+      <source type="image/jpeg" media="(min-width: 744px)" srcset="{{ post.thumbnail.src('video-tablet') }}">
+      <source type="image/jpeg" media="(max-width: 743px)" srcset="{{ post.thumbnail.src('video-mobile') }}">
+    {% endif %} #}
+      <img class="video-article__image lazyload" src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+    </picture>
+    <img class="video-article__icon" src="{{ theme.uri }}/assets/icons/icon-circle-play.svg">
+    {# <div class="video-article__time">28:21:32</div> #}
+  </div>
+  <h3 class="video-article__title">{{ post.title }}</h3>
+</a>

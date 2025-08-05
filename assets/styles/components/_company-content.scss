@@ -1,0 +1,83 @@
+.company-content {
+  display: flex;
+  padding: 0px 24px;
+  flex-direction: column;
+
+  @media (min-width: $tablet) {
+    padding: 0 36px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0 102px;
+  }
+
+  @media (min-width: $large) {
+    padding: 0 116px;
+  }
+
+  h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    @extend %subtitle-large;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: var(--text-text-title-default, #1A1A1A);
+  }
+
+  p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    @extend %body-large;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: var(--text-text-body-default, #262626);
+  }
+
+  a {
+    color: var(--text-text-primary-default, #802CD9);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    padding-left: 30px;
+
+    li {
+      margin-bottom: 8px;
+      @extend %body-list;
+      font-variant-numeric: lining-nums proportional-nums;
+      color: var(--text-text-body-default, #262626);
+    }
+  }
+
+  .wp-caption {
+    width: 100% !important;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 4px;
+
+      @media (max-width: calc($tablet - 1px)) {
+        border-radius: 8px;
+      }
+    }
+
+    .wp-caption-text {
+      margin: 0;
+      @extend %caption-medium;
+      font-variant-numeric: lining-nums proportional-nums;
+      color: var(--text-text-caption-default, #6B7199);
+    }
+  }
+
+  .wp-video {
+    width: 100% !important;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,16 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  <section class="site-content">
+    {{ renderComponent('BreakingArticle') }}
+    {{ renderComponent('LeadArticle', { post: lead_article }) }}
+    {{ renderComponent('CardArticles', { posts: card_articles }) }}
+    {{ renderComponent('ListArticles', { posts: list_articles }) }}
+  </section>
+  <aside class="site-sidebar">
+    {{ renderComponent('BannerSidebar') }}
+    {{ renderComponent('VideoNews') }}
+    {{ renderComponent('SocialLinks') }}
+    {{ renderComponent('PopularTags') }}
+  </aside>
+{% endblock %}

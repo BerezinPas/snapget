@@ -1,0 +1,11 @@
+  <section class="popular-tags">
+    <div class="popular-tags__heading">{{ title }}</div>
+    <div class="popular-tags__items">
+    {% for tag in tags %}
+      {% if loop.index < 21 %}
+        <a class="popular-tags__item{{ (term == tag.name) ? ' article-chips article-chips--green' : ' information-chips' }}" href="{{ tag.link }}">
+          {{ tag.name }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </section>

@@ -1,0 +1,33 @@
+%text-input,
+.text-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  label {
+    position: absolute;
+    left: 12px;
+    top: -10px;
+    padding: 0 4px;
+    background: var(--fill-fill-surface, #FFF);
+    color: var(--text-text-input-default, #686868);
+    @extend %caption-medium;
+    z-index: 99;
+  }
+
+  input {
+    height: 44px;
+    padding: 0px 16px;
+    border-radius: 24px;
+    border: 1px solid var(--border-border-input-default, #DEDEDE);
+    background: var(--fill-fill-surface, #FFF);
+    color: var(--text-text-input-default, #686868);
+    @extend %body-medium;
+    text-overflow: ellipsis;
+
+    &:focus-visible {
+      outline-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{% if enable %}
+<div class="consultation-form">
+    <h3>
+        Форма обратной связи
+    </h3>
+    {{ function('do_shortcode', '[contact-form-7 id="' ~ cf7_form_id ~ '"]') }}
+</div>
+{% endif %}

@@ -1,0 +1,70 @@
+<flynt-component name="UserProfile">
+{%  if user.can('subscriber') or user.can('administrator') %}
+  <section class="user-profile">
+    <div class="user-profile__tabs" data-tabs>
+      <a class="user-profile__tabs-item" href="#account">
+        {% include '/assets/icons/icon-user-profile.svg' %}
+        <span>{{ user_profile }}</span>
+      </a>
+      <a class="user-profile__tabs-item" href="#favourites">
+        {% include '/assets/icons/icon-user-favourites.svg' %}
+        <span>{{ favourites }}</span>
+      </a>
+      <a class="user-profile__tabs-item" href="#security">
+        {% include '/assets/icons/icon-user-security.svg' %}
+        <span>Безопасность</span>
+      </a>
+      <a class="user-profile__tabs-item" href="#referral">
+        <div class="user-profile__tabs-icon">
+          {% include '/assets/icons/icon-user-referral.svg' %}
+        </div>
+        <div class="user-profile__tabs-title">
+          Реферальная программа
+        </div>
+      </a>
+      <a class="user-profile__tabs-item" href="#support">
+        {% include '/assets/icons/icon-user-support.svg' %}
+        <span>{{ support }}</span>
+      </a>
+    </div>
+    <div class="user-profile__content">
+      <div class="user-profile__content-item" id="account">
+        <h3 class="user-profile__content-title">{{ user_profile }}</h3>
+        <div class="user-profile__content-wrap">
+          {{ renderComponent('UserFields') }}
+        </div>
+        <a class="user-profile__content-button" href="{{ function('wp_logout_url') }}">{{ logout }}</a>
+      </div>
+      <div class="user-profile__content-item" id="favourites">
+        <h3 class="user-profile__content-title">{{ favourites }}</h3>
+        {% for post_id in user.favourites %}
+          {% set post = Post(post_id) %}
+          {{ renderComponent('ListArticle', { post: post }) }}
+        {% endfor %}
+      </div>
+      <div class="user-profile__content-item" id="security">
+        <h3 class="user-profile__content-title">Безопасность</h3>
+        <div class="user-profile__content-wrap">
+          {{ function('do_shortcode', '[wppb-edit-profile]') }}
+        </div>
+      </div>
+      <div class="user-profile__content-item" id="referral">
+        <h3 class="user-profile__content-title">Реферальная программа</h3>
+        <div class="user-profile__content-wrap">
+          <p class="user-profile__content-text">Поделитесь ссылкой и получить бонусы</p>
+          <div class="text-input">
+            <label for="referral">Реферальная ссылка</label>
+            <input name="referral" type="text" id="referral" value="https://snapget.ru/blog/?referral={{ referralId }}" disabled="disabled">
+          </div>
+        </div>
+      </div>
+      <div class="user-profile__content-item" id="support">
+        <h3 class="user-profile__content-title">Обращение в службу поддержки</h3>
+        {{ function('do_shortcode', '[contact-form-7 id="bff3357" title="Контактная форма 1"]') }}
+      </div>
+    </div>
+  </section>
+</flynt-component>
+{% else %}
+  {{ renderComponent('UserLogin') }}
+{% endif %}

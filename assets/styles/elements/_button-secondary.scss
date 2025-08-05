@@ -1,0 +1,16 @@
+.button-secondary {
+  display: inline-flex;
+  block-size: 26px;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  background: var(--fill-fill-btn-secondary-default, #FAF5FF);
+  color: var(--text-text-caption-default, #6B7199);
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  @extend %button-middle;
+  cursor: pointer;
+}

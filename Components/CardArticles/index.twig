@@ -1,0 +1,7 @@
+<section class="card-articles">
+  {% for post in posts %}
+    {% if loop.index < 4 %}
+      {{ renderComponent('CardArticle', { post: post }) }}
+    {% endif %}
+  {% endfor %}
+</section>

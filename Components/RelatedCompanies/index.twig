@@ -1,0 +1,11 @@
+{% if items|length > 0 %}
+  <section class="related-companies">
+    <div class="related-companies__title">{{ title }}</div>
+    <div class="related-companies__items">
+      {% for item in items %}
+        {{ renderComponent('RelatedCompany', { post: item }) }}
+        <div class="related-companies__divider"></div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

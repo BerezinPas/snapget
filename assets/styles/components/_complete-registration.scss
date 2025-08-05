@@ -1,0 +1,16 @@
+.complete-registration {
+  width: 680px;
+  padding: 56px 124px 80px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #FFF);
+}
+
+.complete-registration__title {
+  margin-bottom: 32px;
+  @extend %title-large;
+}

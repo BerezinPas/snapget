@@ -1,0 +1,9 @@
+{% if post|length > 0 %}
+  <section class="breaking-article">
+    <a class="breaking-article__link" href="{{ post.link|e('esc_url') }}">
+      <div class="breaking-article__tag article-chips article-chips--red">{{ tag }}</div>
+      <h3 class="breaking-article__title">{{ post.title }}</h3>
+      <span class="breaking-article__button">{{ button }}</span>
+    </a>
+  </section>
+{% endif %}

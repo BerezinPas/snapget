@@ -1,0 +1,13 @@
+{% if banner %}
+  <section class="banner-sidebar">
+    <a class="banner-sidebar__link" href="{{ banner.meta('link') }}" target="_blank">
+      <picture class="banner-sidebar__picture">
+        <source type="image/jpeg" media="(min-width: 1440px)" srcset="{{ banner.meta('image_308') }}">
+        <source type="image/jpeg" media="(min-width: 1280px)" srcset="{{ banner.meta('image_280') }}">
+        <source type="image/jpeg" media="(min-width: 744px)" srcset="{{ banner.meta('image_266') }}">
+        <source type="image/jpeg" media="(max-width: 743px)" srcset="{{ banner.meta('image_266') }}">
+        <img class="banner-sidebar__image" src="{{ banner.meta('image_308') }}" alt="">
+      </picture>
+    </a>
+  </section>
+{% endif %}

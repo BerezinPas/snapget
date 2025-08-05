@@ -1,0 +1,22 @@
+{% if items|length > 0 %}
+  <section class="related-news">
+    <div class="related-news__title">{{ title }}</div>
+    <div class="related-news__cards">
+      {% for post in items %}
+        {% if loop.index < 4 %}
+          {{ renderComponent('CardArticle') }}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% if items|length > 3 %}
+      <div class="related-news__list">
+          {% for post in items %}
+            {% if loop.index > 3 %}
+              {{ renderComponent('ListArticle') }}
+              <div class="related-news__divider"></div>
+            {% endif %}
+          {% endfor %}
+      </div>
+    {% endif %}
+  </section>
+{% endif %}

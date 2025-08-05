@@ -1,0 +1,25 @@
+<div class="commentSection" id="comments">
+  <h2 class="commentSection-title">{{ post.comment_count }} комментариев</h2>
+  
+  {% if comments %}
+    <ol class="commentList">
+      {% for comment in comments %}
+        {% if comment.comment_parent == 0 %}
+          {% include 'Components/CommentSection/comment.twig' with {
+            comment: comment,
+            comments: comments,
+            depth: 0,
+            options: options
+          } %}
+        {% endif %}
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p class="commentSection-empty">Пока нет комментариев</p>
+  {% endif %}
+
+  <div class="commentForm-wrapper">
+    <h3>{{ options.commentSettings.formTitle }}</h3>
+    {{ function('comment_form') }}
+  </div>
+</div>
