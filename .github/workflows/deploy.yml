@@ -1,7 +1,5 @@
-name: Deploy Theme
-on:
-  push:
-    branches: [main]
+name: Build and Deploy
+on: push
 
 jobs:
   build:
@@ -19,11 +17,13 @@ jobs:
         run: npm ci
 
       - name: Build theme
-        run: npm run build
+        run: npm run build # Собираем dist/ на GitHub
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+      - name: Upload to server via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
-          name: theme-build
-          path: dist/ # Или ваша папка сборки
-          retention-days: 1
+          server: 188.225.23.151
+          username: snapget
+          password: OO!VeL9j$6hq
+          local-dir: ./dist/ # Папка сборки
+          server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
