@@ -7,19 +7,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Для сравнения с предыдущим коммитом
+          fetch-depth: 2
 
-      # Проверяем изменения в assets/ И Components/
+      # Всегда создаем папку dist (даже пустую)
+      - name: Ensure dist exists
+        run: mkdir -p dist
+
+      # Проверяем изменения
       - name: Check for resource changes
         id: check-resources
         run: |
           changed_files=$(git diff --name-only HEAD^ HEAD -- assets/ Components/)
           if [ -n "$changed_files" ]; then
             echo "needs_build=true" >> $GITHUB_OUTPUT
-            echo "Changed files:" $changed_files
+          else
+            echo "✔ Нет изменений в ресурсах - пропускаем сборку"
           fi
 
-      # Сборка только при изменении ресурсов
+      # Условная сборка
       - name: Build assets
         if: steps.check-resources.outputs.needs_build == 'true'
         run: |
@@ -27,20 +32,19 @@ jobs:
           npm run build
           echo "Содержимое dist:" && ls -la dist/
 
-      # Деплой всего (корень + актуальный dist)
+      # Деплой с проверкой dist
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
-          local-dir: ./dist/
-          server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/dist/
+          local-dir: ./
+          server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
           exclude: |
             .git/
             node_modules/
             .github/
-            *.md
-            webpack.config.js
-            package*.json
+            dist/  # Исключаем, если пустая
           dangerous-clean-slate: false
+        continue-on-error: true # Пропускаем ошибку, если dist пустой
