@@ -6,49 +6,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # Устанавливаем только Node.js (PHP не требуется)
-      - name: Setup Node
-        uses: actions/setup-node@v4
         with:
-          node-version: 18 # Используем LTS-версию для стабильности
+          fetch-depth: 2 # Получаем текущий и предыдущий коммит
 
-      # Кэшируем зависимости для ускорения
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
-      # Устанавливаем зависимости (пропускаем предупреждения)
-      - name: Install dependencies
-        run: |
-          npm ci --no-audit --ignore-scripts
-          npm fund --no-audit
-
-      # Определяем изменения в ресурсах
+      # Надежная проверка изменений
       - name: Check for asset changes
         id: check-assets
         run: |
-          changed_files=$(git diff --name-only HEAD^ HEAD -- assets/ Components/)
-          if [ -n "$changed_files" ]; then
-            echo "needs_build=true" >> $GITHUB_OUTPUT
-            echo "Changed files detected:"
-            echo "$changed_files"
+          if [ "${{ github.event_name }}" == "push" ]; then
+            changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- assets/ Components/)
+          else
+            changed_files=$(git diff --name-only HEAD~1 HEAD -- assets/ Components/)
           fi
 
-      # Альтернативная сборка без phpcs
+          if [ -n "$changed_files" ]; then
+            echo "needs_build=true" >> $GITHUB_OUTPUT
+            echo "Changed files: $changed_files"
+          fi
+
+      # Остальные шаги остаются без изменений
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci --no-audit
+
       - name: Build assets
         if: steps.check-assets.outputs.needs_build == 'true'
-        run: |
-          npx gulp build --production  # Используем напрямую gulp
-          echo "Build contents:"
-          ls -la dist/
+        run: npm run build:production
 
-      # Деплой через FTP (только измененные файлы + dist)
-      - name: FTP Deploy
+      - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: 188.225.23.151
@@ -59,7 +48,4 @@ jobs:
           exclude: |
             .git/
             node_modules/
-            vendor/
-            *.log
             .github/
-          dangerous-clean-slate: false
