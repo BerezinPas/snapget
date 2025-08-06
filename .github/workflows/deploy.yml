@@ -7,37 +7,53 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Получаем текущий и предыдущий коммит
+          fetch-depth: 0 # Полная история для анализа изменений
 
-      # Надежная проверка изменений
-      - name: Check for asset changes
-        id: check-assets
+      # Определяем измененные файлы
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v42
+        with:
+          files: |
+            **/*
+          files_separator: ","
+
+      # Проверяем изменения в assets/ и JS в Components/
+      - name: Check for resource changes
+        id: check-resources
         run: |
-          if [ "${{ github.event_name }}" == "push" ]; then
-            changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- assets/ Components/)
-          else
-            changed_files=$(git diff --name-only HEAD~1 HEAD -- assets/ Components/)
-          fi
-
-          if [ -n "$changed_files" ]; then
+          # Проверяем изменения в assets/
+          if echo "${{ steps.changed-files.outputs.all_changed_files }}" | grep -q 'assets/'; then
             echo "needs_build=true" >> $GITHUB_OUTPUT
-            echo "Changed files: $changed_files"
+            echo "Changes detected in assets/"
           fi
 
-      # Остальные шаги остаются без изменений
+          # Проверяем изменения JS в Components/
+          if echo "${{ steps.changed-files.outputs.all_changed_files }}" | grep -q 'Components/.*\.js'; then
+            echo "needs_build=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in Components JS files"
+          fi
+
+      # Настраиваем Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
+      # Устанавливаем зависимости
       - name: Install dependencies
         run: npm ci --no-audit
 
+      # Сборка при необходимости
       - name: Build assets
-        if: steps.check-assets.outputs.needs_build == 'true'
-        run: npm run build:production
+        if: steps.check-resources.outputs.needs_build == 'true'
+        run: |
+          npm run build:production
+          echo "Build output:"
+          ls -la dist/
 
-      - name: Deploy
+      # Деплой только измененных файлов
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: 188.225.23.151
@@ -45,7 +61,15 @@ jobs:
           password: OO!VeL9j$6hq
           local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
+          include: |
+            ${{ steps.changed-files.outputs.all_changed_files }}
+            dist/**  # Всегда включаем dist (если был build)
           exclude: |
             .git/
             node_modules/
             .github/
+            *.log
+            package*.json
+            webpack.config.js
+          dangerous-clean-slate: false
+          dry-run: false
