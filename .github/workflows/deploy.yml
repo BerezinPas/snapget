@@ -82,8 +82,6 @@ jobs:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
-          port: 21
-          protocol: ftps
           local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
           exclude: |
