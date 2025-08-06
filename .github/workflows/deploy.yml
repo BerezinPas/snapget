@@ -1,44 +1,50 @@
-name: Build and Deploy
+name: Smart Deploy
 on: push
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.1"
-          tools: composer
+          fetch-depth: 2 # Для сравнения коммитов
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      # Определяем изменения в assets/ И Components/
+      - name: Check for JS/CSS changes
+        id: check-resources
+        run: |
+          changed_assets=$(git diff --name-only HEAD^ HEAD -- assets/)
+          changed_components=$(git diff --name-only HEAD^ HEAD -- Components/*/*.{js,scss})
+          if [ -n "$changed_assets" ] || [ -n "$changed_components" ]; then
+            echo "needs_build=true" >> $GITHUB_OUTPUT
+            echo "Измененные файлы:"
+            echo "$changed_assets"
+            echo "$changed_components"
+          fi
 
-      - name: Install PHP dependencies
-        run: composer install --no-interaction
+      # Сборка при изменении ресурсов
+      - name: Build assets
+        if: steps.check-resources.outputs.needs_build == 'true'
+        run: |
+          npm ci
+          npm run build
+          echo "Содержимое dist:"
+          ls -la dist/
 
-      - name: Install Node dependencies
-        run: npm ci
-
-      - name: Build theme
-        run: npm run build:production
-
-      - name: Verify dist contents
-        run: ls -la dist/
-
+      # Деплой ТОЛЬКО измененных файлов
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
-          port: 21 # Явно укажите порт
-          protocol: ftps # Попробуйте разные варианты: ftp, ftps, sftp
-          local-dir: ./dist/
-          server-dir: /public_html/blog/wp-content/themes/flynt/
+          local-dir: ./
+          server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
+          include: |
+            ${{ steps.changed-files.outputs.all_modified_files }}
+            dist/**  # Всегда заливаем собранные assets
+          exclude: |
+            .git/
+            node_modules/
+            *.log
           dangerous-clean-slate: false
-          log-level: verbose
