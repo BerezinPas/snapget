@@ -24,8 +24,11 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Build theme (skip lint)
+      - name: Build theme
         run: npm run build:production
+
+      - name: Verify dist contents
+        run: ls -la dist/
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
@@ -33,11 +36,9 @@ jobs:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
+          port: 21 # Явно укажите порт
+          protocol: ftps # Попробуйте разные варианты: ftp, ftps, sftp
           local-dir: ./dist/
-          server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
-          dangerous-clean-slate: false # Важно! Не очищать сервер перед загрузкой
-          exclude: |
-            .git/*
-            .github/*
-            node_modules/*
+          server-dir: /public_html/blog/wp-content/themes/flynt/
+          dangerous-clean-slate: false
           log-level: verbose
