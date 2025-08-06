@@ -56,6 +56,7 @@ Options::addGlobal('SocialLinks', [
               'vk' => __('VK', 'flynt'),
               'youtube' => __('YouTube', 'flynt'),
               'x' => __('X', 'flynt'),
+              'dzen' => __('Dzen', 'flynt'),
           ],
           'default_value' => '',
           'wrapper' => [
