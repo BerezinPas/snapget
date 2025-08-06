@@ -11,13 +11,12 @@ jobs:
         with:
           fetch-depth: 2
 
-      # 1. Установка PHP (только для Flynt)
+      # 1. Установка PHP
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.1"
           tools: composer
-          coverage: none
 
       - name: Install PHP dependencies
         run: composer install --no-interaction --no-dev
@@ -31,7 +30,7 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      # 3. Определение изменений в критичных папках
+      # 3. Проверка изменений
       - name: Check for relevant changes
         id: changes
         uses: tj-actions/changed-files@v35
@@ -39,15 +38,16 @@ jobs:
           files: |
             assets/**
             Components/**/*.js
+            *.php
 
       # 4. Условная пересборка
       - name: Rebuild if needed
         if: steps.changes.outputs.any_changed == 'true'
         run: |
           echo "Обнаружены изменения - пересобираем проект"
-          rm -rf dist/  # Удаляем старую сборку
+          rm -rf dist/
           npm run build:production
-          echo "Новое содержимое dist:"
+          echo "Содержимое dist:"
           ls -la dist/
 
       # 5. Проверка существования dist
@@ -57,24 +57,35 @@ jobs:
           if [ ! -d "dist" ]; then
             echo "Папка dist отсутствует - собираем проект"
             npm run build:production
-          else
-            echo "Используем существующую папку dist"
           fi
           echo "Содержимое dist:"
           ls -la dist/
 
-      # 6. Умный деплой
+      # 6. Подготовка списка файлов для загрузки
+      - name: Prepare files list
+        id: files
+        run: |
+          if [ "${{ steps.changes.outputs.any_changed }}" == "true" ]; then
+            # При изменениях загружаем измененные файлы + всю папку dist
+            echo "changed_files=${{ steps.changes.outputs.all_modified_files }}" >> $GITHUB_OUTPUT
+            echo "upload_dist=true" >> $GITHUB_OUTPUT
+          else
+            # Без изменений загружаем только измененные файлы (если есть)
+            echo "changed_files=${{ steps.changes.outputs.all_modified_files }}" >> $GITHUB_OUTPUT
+            echo "upload_dist=false" >> $GITHUB_OUTPUT
+          fi
+
+      # 7. Умный деплой
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
+          port: 21
+          protocol: ftps
           local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
-          include: |
-            ${{ steps.changes.outputs.all_modified_files }}
-            dist/**
           exclude: |
             .git/**
             .github/**
@@ -83,5 +94,6 @@ jobs:
             *.log
             *.config.js
             *.lock
+            dist/**${{ steps.files.outputs.upload_dist == 'false' && '/*' || '' }}
           dangerous-clean-slate: false
           log-level: verbose
