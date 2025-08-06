@@ -1,37 +1,31 @@
-name: Deploy
-
-on:
-  push:
-    branches: [main]
+name: Build and Deploy
+on: push
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Check for changes in assets or components
-        id: changes
-        uses: tj-actions/changed-files@v35
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          files: |
-            assets/**
-            components/**/*.js
+          php-version: "8.1"
+          tools: composer
 
-      - name: Set up Node.js
-        if: steps.changes.outputs.any_changed == 'true'
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
-      - name: Install dependencies
-        if: steps.changes.outputs.any_changed == 'true'
-        run: npm install
+      - name: Install PHP dependencies
+        run: composer install --no-interaction
 
-      - name: Build dist
-        if: steps.changes.outputs.any_changed == 'true'
-        run: npm run build
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build theme (skip lint)
+        run: npm run build:production # Пропускаем проверки
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
@@ -39,16 +33,5 @@ jobs:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
-          local-dir: ./
+          local-dir: ./dist/ # Папка сборки
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
-          exclude: |
-            .git/*
-            .github/*
-            node_modules/*
-            src/*
-            *.json
-            *.lock
-            *.md
-            *.config.js
-          dangerous-clean-slate: false
-          log-level: verbose
