@@ -1,4 +1,4 @@
-name: Optimized Deploy
+name: Guaranteed Dist Deploy
 on:
   push:
     branches: [main]
@@ -29,27 +29,17 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      # Определение изменений
-      - name: Check for changes
-        id: changes
-        uses: tj-actions/changed-files@v35
-        with:
-          files: |
-            assets/**
-            Components/**/*.js
-            *.php
-
-      # Условная сборка
+      # Всегда собираем проект (убрали условие)
       - name: Build project
-        if: steps.changes.outputs.any_changed == 'true'
         run: |
           rm -rf dist/
           npm run build:production
-          echo "Build complete. Dist contents:"
+          echo "Содержимое dist:"
           ls -la dist/
 
-      # Основной деплой (используем корневую папку)
-      - name: FTP Deploy
+      # Деплой в ДВА этапа:
+      # 1. Сначала заливаем ТОЛЬКО папку dist
+      - name: Deploy Dist Folder
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 188.225.23.151
@@ -57,16 +47,28 @@ jobs:
           password: OO!VeL9j$6hq
           port: 21
           protocol: ftp
-          local-dir: ./ # <-- Используем корневую папку проекта
+          local-dir: ./dist/
+          server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/dist/
+          dangerous-clean-slate: true # Перезаписываем всю папку dist
+          log-level: verbose
+
+      # 2. Затем заливаем остальные измененные файлы
+      - name: Deploy Other Files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: 188.225.23.151
+          username: snapget
+          password: OO!VeL9j$6hq
+          port: 21
+          protocol: ftp
+          local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
-          include: |
-            ${{ steps.changes.outputs.all_modified_files }}
-            dist/**
           exclude: |
             .git/**
             .github/**
             node_modules/**
             vendor/**
+            dist/**  # Исключаем dist, так как уже залили
             *.log
             *.config.js
             *.lock
