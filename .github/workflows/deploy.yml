@@ -1,45 +1,39 @@
 name: Deploy
-on: push
+
+on:
+  push:
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      # 1. Установка Node.js без лишних предупреждений
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: "npm"
-
-      # 2. Чистая установка зависимостей
-      - name: Install deps
-        run: |
-          npm ci --no-audit --ignore-scripts --no-fund --silent
-          npm cache clean --force
-
-      # 3. Определение изменений без ошибок
-      - name: Detect changes
+      - name: Check for changes in assets or components
         id: changes
-        run: |
-          changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} || echo "")
-          echo "changed_files=$changed_files" >> $GITHUB_OUTPUT
+        uses: tj-actions/changed-files@v35
+        with:
+          files: |
+            assets/**
+            components/**/*.js
 
-          if echo "$changed_files" | grep -q 'assets/\|Components/.*\.js'; then
-            echo "needs_build=true" >> $GITHUB_OUTPUT
-          fi
+      - name: Set up Node.js
+        if: steps.changes.outputs.any_changed == 'true'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-      # 4. Альтернативная сборка без ошибок
-      - name: Build assets
-        if: steps.changes.outputs.needs_build == 'true'
-        run: |
-          npx gulp build --production || echo "Build completed with warnings"
-          ls -la dist/
+      - name: Install dependencies
+        if: steps.changes.outputs.any_changed == 'true'
+        run: npm install
 
-      # 5. Деплой без node_modules
-      - name: Deploy
+      - name: Build dist
+        if: steps.changes.outputs.any_changed == 'true'
+        run: npm run build
+
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: 188.225.23.151
@@ -48,11 +42,13 @@ jobs:
           local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
           exclude: |
-            .*
-            node_modules/
-            package*
-            *.log
-          include: |
-            ${{ steps.changes.outputs.changed_files }}
-            dist/**
+            .git/*
+            .github/*
+            node_modules/*
+            src/*
+            *.json
+            *.lock
+            *.md
+            *.config.js
           dangerous-clean-slate: false
+          log-level: verbose
