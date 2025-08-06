@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Для сравнения коммитов
+          fetch-depth: 2
 
       # Определяем изменения
       - name: Get changed files
@@ -28,17 +28,15 @@ jobs:
           echo "Содержимое dist:"
           ls -la dist/
 
-      # Деплой измененных файлов + dist
+      # Деплой только нужных файлов
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4 # Используем последнюю версию
         with:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
-          local-dir: ./
+          local-dir: ./dist/ # Указываем ТОЛЬКО папку dist
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
-          include: |
-            dist/**
           exclude: |
             .git/
             .github/
