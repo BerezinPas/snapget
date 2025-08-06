@@ -1,4 +1,4 @@
-name: Smart Deploy
+name: Optimized Deploy
 on:
   push:
     branches: [main]
@@ -11,7 +11,7 @@ jobs:
         with:
           fetch-depth: 2
 
-      # 1. Установка PHP и зависимостей
+      # 1. Установка PHP (только для Flynt)
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -31,27 +31,39 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      # 3. Определение измененных файлов
-      - name: Get changed files
-        id: changed-files
+      # 3. Определение изменений в критичных папках
+      - name: Check for relevant changes
+        id: changes
         uses: tj-actions/changed-files@v35
         with:
           files: |
-            **
-            !node_modules/**
-            !vendor/**
-          files_ignore: |
-            .git/**
-            dist/**
+            assets/**
+            Components/**/*.js
 
-      # 4. Сборка проекта (пропускаем проверки)
-      - name: Build project (production)
+      # 4. Условная пересборка
+      - name: Rebuild if needed
+        if: steps.changes.outputs.any_changed == 'true'
         run: |
+          echo "Обнаружены изменения - пересобираем проект"
+          rm -rf dist/  # Удаляем старую сборку
           npm run build:production
+          echo "Новое содержимое dist:"
+          ls -la dist/
+
+      # 5. Проверка существования dist
+      - name: Ensure dist exists
+        if: steps.changes.outputs.any_changed != 'true'
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Папка dist отсутствует - собираем проект"
+            npm run build:production
+          else
+            echo "Используем существующую папку dist"
+          fi
           echo "Содержимое dist:"
           ls -la dist/
 
-      # 5. Деплой
+      # 6. Умный деплой
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -61,7 +73,7 @@ jobs:
           local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
           include: |
-            ${{ steps.changed-files.outputs.all_modified_files }}
+            ${{ steps.changes.outputs.all_modified_files }}
             dist/**
           exclude: |
             .git/**
