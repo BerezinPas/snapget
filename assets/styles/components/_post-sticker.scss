@@ -10,6 +10,24 @@
   position: relative;
   overflow: hidden;
   animation: gradientPulse 6s infinite alternate;
+
+  /* Блестящая полоса */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    animation: shineLoop 4s infinite;
+  }
 }
 
 @keyframes gradientPulse {
@@ -19,24 +37,6 @@
   100% {
     background-position: 100% 50%;
   }
-}
-
-/* Блестящая полоса */
-.animated-text::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-20deg);
-  animation: shineLoop 4s infinite;
 }
 
 @keyframes shineLoop {
@@ -59,18 +59,34 @@
   border-radius: 24px;
   font-size: 24px;
   width: max-content;
-
   background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 50%, #c084fc 100%);
-
   color: white;
   font-weight: 800;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3) inset,
     0 4px 12px rgba(92, 36, 173, 0.5);
+  background-size: 200% 200%;
+  animation: gradientPulse-2 5s ease infinite;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    animation: shineLoop 4s infinite;
+  }
 }
 
 @keyframes gradientPulse-2 {
@@ -83,27 +99,6 @@
   100% {
     background-position: 0% 50%;
   }
-}
-.animated-text-2 {
-  background-size: 200% 200%;
-  animation: gradientPulse-2 5s ease infinite;
-}
-
-.animated-text-2::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: skewX(-20deg);
-  animation: shineLoop 4s infinite;
 }
 
 /* 3 */
@@ -129,12 +124,4 @@
   100% {
     background-position: 0% 50%;
   }
-}
-
-/* post */
-.post-content .wp-block-details summary {
-  background-color: #d92550;
-  padding: 10px;
-  color: #fff;
-  border-radius: 10px;
 }

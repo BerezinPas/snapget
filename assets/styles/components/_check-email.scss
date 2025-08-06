@@ -1,0 +1,29 @@
+.check-email {
+  width: 680px;
+  padding: 56px 124px 80px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: var(--fill-fill-surface, #fff);
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__title {
+    color: var(--text-text-title-default, #1a1a1a);
+    @extend %title-large;
+  }
+
+  &__text {
+    @extend %body-medium;
+    color: var(--text-text-body-default, #262626);
+  }
+}

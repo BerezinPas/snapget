@@ -7,23 +7,26 @@
     margin-bottom: 16px;
     @extend %headline-large;
     overflow-wrap: anywhere;
-    color: var(--text-text-title-default, #1A1A1A);
+    color: var(--text-text-title-default, #1a1a1a);
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     margin-top: 20px;
     margin-bottom: 12px;
     @extend %subtitle-large;
     font-variant-numeric: lining-nums proportional-nums;
-    color: var(--text-text-title-default, #1A1A1A);
+    color: var(--text-text-title-default, #1a1a1a);
   }
 
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     margin-top: 16px;
     margin-bottom: 4px;
     @extend %subtitle-medium;
     font-variant-numeric: lining-nums proportional-nums;
-    color: var(--text-text-title-default, #1A1A1A);
+    color: var(--text-text-title-default, #1a1a1a);
   }
 
   p {
@@ -35,7 +38,7 @@
   }
 
   a {
-    color: var(--text-text-primary-default, #802CD9);
+    color: var(--text-text-primary-default, #802cd9);
 
     &:hover {
       text-decoration: underline;
@@ -63,12 +66,12 @@
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 20px;
-    border-left: 4px solid var(--fill-fill-tint-primary-default, #802CD9);
-    color: var(--text-text-title-default, #1A1A1A);
+    border-left: 4px solid var(--fill-fill-tint-primary-default, #802cd9);
+    color: var(--text-text-title-default, #1a1a1a);
     font-variant-numeric: lining-nums proportional-nums;
 
     p {
-      margin-top: 0;;
+      margin-top: 0;
       margin-bottom: 12px;
       @extend %title-medium;
     }
@@ -76,6 +79,13 @@
     cite {
       @extend %body-large;
     }
+  }
+
+  .wp-block-details summary {
+    background-color: var(--fill-fill-tint-danger-default, #d92550);
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
   }
 }
 
@@ -142,7 +152,7 @@
   .wp-element-caption {
     margin-top: 4px;
     @extend %caption-medium;
-    color: var(--text-text-caption-default, #6B7199);
+    color: var(--text-text-caption-default, #6b7199);
     font-variant-numeric: lining-nums proportional-nums;
   }
 }
@@ -194,7 +204,7 @@
     margin-left: 24px;
     margin-right: 24px;
     @extend %caption-medium;
-    color: var(--text-text-caption-default, #6B7199);
+    color: var(--text-text-caption-default, #6b7199);
     font-variant-numeric: lining-nums proportional-nums;
 
     @media (min-width: $tablet) {
