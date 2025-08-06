@@ -1,4 +1,4 @@
-name: Secure Deploy
+name: Optimized Deploy
 on:
   push:
     branches: [main]
@@ -11,7 +11,7 @@ jobs:
         with:
           fetch-depth: 2
 
-      # 1. Установка PHP и зависимостей
+      # Установка зависимостей
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -21,7 +21,6 @@ jobs:
       - name: Install PHP dependencies
         run: composer install --no-interaction --no-dev
 
-      # 2. Установка Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -30,7 +29,7 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      # 3. Проверка изменений
+      # Определение изменений
       - name: Check for changes
         id: changes
         uses: tj-actions/changed-files@v35
@@ -40,7 +39,7 @@ jobs:
             Components/**/*.js
             *.php
 
-      # 4. Условная сборка
+      # Условная сборка
       - name: Build project
         if: steps.changes.outputs.any_changed == 'true'
         run: |
@@ -49,27 +48,20 @@ jobs:
           echo "Build complete. Dist contents:"
           ls -la dist/
 
-      # 5. Проверка существования dist
-      - name: Verify dist
-        if: steps.changes.outputs.any_changed != 'true'
-        run: |
-          if [ ! -d "dist" ]; then
-            echo "Dist folder missing - building..."
-            npm run build:production
-          fi
-          ls -la dist/
-
-      # 6. Деплой через FTP (без SSL)
-      - name: FTP Deploy (Plain)
+      # Основной деплой (используем корневую папку)
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
           port: 21
-          protocol: ftp # Без шифрования
-          local-dir: ./
+          protocol: ftp
+          local-dir: ./ # <-- Используем корневую папку проекта
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
+          include: |
+            ${{ steps.changes.outputs.all_modified_files }}
+            dist/**
           exclude: |
             .git/**
             .github/**
