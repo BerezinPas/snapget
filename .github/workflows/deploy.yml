@@ -9,18 +9,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Для сравнения изменений между коммитами
+          fetch-depth: 2
 
-      # 1. Установка зависимостей
+      # 1. Установка PHP и зависимостей
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          tools: composer
+          coverage: none
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --no-dev
+
+      # 2. Установка Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install Node dependencies
         run: npm ci
 
-      # 2. Определение измененных файлов (кроме node_modules)
+      # 3. Определение измененных файлов
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v35
@@ -28,19 +39,19 @@ jobs:
           files: |
             **
             !node_modules/**
+            !vendor/**
           files_ignore: |
             .git/**
             dist/**
-            node_modules/**
 
-      # 3. Сборка проекта (всегда)
-      - name: Build project
+      # 4. Сборка проекта (пропускаем проверки)
+      - name: Build project (production)
         run: |
-          npm run build
+          npm run build:production
           echo "Содержимое dist:"
           ls -la dist/
 
-      # 4. Деплой измененных файлов + dist
+      # 5. Деплой
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -56,6 +67,7 @@ jobs:
             .git/**
             .github/**
             node_modules/**
+            vendor/**
             *.log
             *.config.js
             *.lock
