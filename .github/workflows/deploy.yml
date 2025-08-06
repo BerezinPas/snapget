@@ -1,5 +1,7 @@
 name: Smart Deploy
-on: push
+on:
+  push:
+    branches: [main]
 
 jobs:
   deploy:
@@ -7,41 +9,55 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 2 # Для сравнения изменений между коммитами
 
-      # Определяем изменения
+      # 1. Установка зависимостей
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      # 2. Определение измененных файлов (кроме node_modules)
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v35
         with:
           files: |
-            assets/**
-            Components/**/*.js
-            Components/**/*.scss
+            **
+            !node_modules/**
+          files_ignore: |
+            .git/**
+            dist/**
+            node_modules/**
 
-      # Сборка при изменении ресурсов
-      - name: Build assets
-        if: steps.changed-files.outputs.any_changed == 'true'
+      # 3. Сборка проекта (всегда)
+      - name: Build project
         run: |
-          npm ci
           npm run build
           echo "Содержимое dist:"
           ls -la dist/
 
-      # Деплой только нужных файлов
+      # 4. Деплой измененных файлов + dist
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4 # Используем последнюю версию
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 188.225.23.151
           username: snapget
           password: OO!VeL9j$6hq
-          local-dir: ./dist/ # Указываем ТОЛЬКО папку dist
+          local-dir: ./
           server-dir: /test.snapget.ru/public_html/blog/wp-content/themes/flynt/
+          include: |
+            ${{ steps.changed-files.outputs.all_modified_files }}
+            dist/**
           exclude: |
-            .git/
-            .github/
-            node_modules/
+            .git/**
+            .github/**
+            node_modules/**
             *.log
             *.config.js
+            *.lock
           dangerous-clean-slate: false
           log-level: verbose
