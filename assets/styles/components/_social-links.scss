@@ -4,12 +4,12 @@
   flex-flow: column;
   gap: 16px;
   border-radius: 16px;
-  background: var(--fill-fill-surface, #FFF);
+  background: var(--fill-fill-surface, #fff);
 }
 
 .social-links__title {
   @extend %title-medium;
-  color: var(--text-text-title-default, #1A1A1A);
+  color: var(--text-text-title-default, #1a1a1a);
   font-variant-numeric: lining-nums proportional-nums;
 }
 
@@ -22,4 +22,9 @@
 .social-links__items {
   display: flex;
   gap: 16px;
+}
+
+.social-links__link {
+  width: 40px;
+  height: 40px;
 }
