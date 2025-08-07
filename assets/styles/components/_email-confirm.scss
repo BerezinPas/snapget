@@ -23,6 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   // gap: 16px;
 }
 
@@ -37,4 +38,8 @@
   color: var(--text-text-body-default, #262626);
   margin-top: 8px;
   margin-bottom: 40px;
+}
+
+.email-confirm__link {
+  width: 100%;
 }
