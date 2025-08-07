@@ -77,10 +77,6 @@ form .wppb-form-field {
   position: relative;
   padding-bottom: 16px;
 
-  &.wppb-checkbox label {
-    top: 0;
-  }
-
   &.wppb-field-error:not(.wppb-checkbox) label {
     color: var(--text-text-danger-default, #d92550);
   }
@@ -89,6 +85,7 @@ form .wppb-form-field {
     background-color: transparent;
     border: none;
     padding: 0 0 16px !important;
+    margin-bottom: 0px !important;
 
     input[type="text"],
     input[type="tel"],
@@ -154,6 +151,14 @@ form .wppb-form-field {
     width: auto;
     @extend %body-medium;
     color: var(--text-text-body-default, #262626);
+  }
+
+  &.wppb-checkbox label {
+    top: 0;
+
+    span img {
+      display: none;
+    }
   }
 }
 
