@@ -69,15 +69,15 @@ body {
     }
   }
 
-  .single-company & {
-    max-width: 832px;
-    grid-template-columns: 1fr;
-    gap: 16px;
+  // .single-company & {
+  //   max-width: 832px;
+  //   grid-template-columns: 1fr;
+  //   gap: 16px;
 
-    @media (min-width: $large) {
-      max-width: 944px;
-    }
-  }
+  //   @media (min-width: $large) {
+  //     max-width: 944px;
+  //   }
+  // }
 
   .error404 & {
     max-width: 1004px;
