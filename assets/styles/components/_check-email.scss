@@ -1,5 +1,6 @@
 .check-email {
-  width: 680px;
+  width: 100%;
+  max-width: 432px;
   padding: 56px 124px 80px;
   margin: 0 auto;
   display: flex;
@@ -40,5 +41,8 @@
 }
 
 .check-email__btn {
+  width: 100%;
+  background-color: var(--text-text-primary-default, #802cd9);
+  color: var(--text-text-light-default, #fff);
   @extend %button-large;
 }

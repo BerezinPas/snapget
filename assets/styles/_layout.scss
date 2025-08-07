@@ -4,8 +4,8 @@ flynt-component {
 }
 
 body {
-  font-family: 'Inter';
-  background: var(--fill-fill-background, #F6F6F7);
+  font-family: "Inter";
+  background: var(--fill-fill-background, #f6f6f7);
 }
 
 .site-page {
@@ -20,14 +20,14 @@ body {
   }
 }
 
-.mobile-row{
+.mobile-row {
   display: none;
   @media (max-width: $desktop) {
     display: block;
   }
 }
 
-.pc-row{
+.pc-row {
   display: block;
   @media (max-width: $desktop) {
     display: none;
@@ -69,7 +69,7 @@ body {
     }
   }
 
-  .single-company & {
+  .page-template-page-check-email & {
     max-width: 832px;
     grid-template-columns: 1fr;
     gap: 16px;
@@ -121,7 +121,7 @@ body {
   // gap: 36px;
   align-self: stretch;
   border-radius: 16px;
-  background: var(--fill-fill-surface, #FFF);
+  background: var(--fill-fill-surface, #fff);
 
   @media (min-width: $tablet) {
     padding: 36px;
@@ -144,7 +144,7 @@ body {
   gap: 16px;
   align-self: stretch;
   border-radius: 16px;
-  background: var(--fill-fill-surface, #FFF);
+  background: var(--fill-fill-surface, #fff);
 }
 
 .site-tag {
