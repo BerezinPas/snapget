@@ -73,6 +73,8 @@ add_filter('gettext', function ($translated_text){
         return 'Отправить эти учетные данные по электронной почте';
     } elseif($translated_text == 'There was an error in the submitted form'){
         return 'В заполненой форме обнаружена ошибка.';
+    } elseif($translated_text == 'I agree with the rules and regulations'){
+        return 'Я согласен(а) с правилами и правилами.';
     }
     //print $translated_text.' | ';
     return $translated_text;
