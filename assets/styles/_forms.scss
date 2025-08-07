@@ -90,6 +90,14 @@ form .wppb-form-field {
     border: none;
     padding: 0 0 16px !important;
 
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"] {
+      border: 2px solid var(--text-text-danger-default, #d92550);
+    }
     .wppb-form-error {
       padding-top: 0;
       margin-left: 16px;
