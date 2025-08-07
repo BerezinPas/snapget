@@ -12,7 +12,7 @@ form.wppb-user-forms {
       margin-left: 16px;
       font-size: 13px;
       border: none;
-      color: var(--text-text-danger-default);
+      color: var(--text-text-danger-default, #d92550);
     }
   }
 
@@ -78,6 +78,9 @@ form.wppb-user-forms {
     label {
       display: block !important;
       margin-top: 18px !important;
+    }
+    .wppb-field-error label {
+      color: var(--text-text-danger-default, #d92550);
     }
   }
 
