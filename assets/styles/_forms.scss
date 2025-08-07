@@ -2,6 +2,20 @@
 form.wppb-user-forms {
   width: 100%;
 
+  .wppb-field-error li {
+    background-color: transparent;
+    border: none;
+    padding: 0 !important;
+
+    .wppb-form-error {
+      padding-top: 0;
+      margin-left: 16px;
+      font-size: 13px;
+      border: none;
+      color: var(--text-text-danger-default);
+    }
+  }
+
   input[type="text"],
   input[type="tel"],
   input[type="number"],
