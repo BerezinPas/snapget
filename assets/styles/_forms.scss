@@ -2,7 +2,7 @@
 form.wppb-user-forms {
   width: 100%;
 
-  .wppb-field-error li {
+  .wppb-field-error {
     background-color: transparent;
     border: none;
     padding: 0 !important;
@@ -79,9 +79,6 @@ form.wppb-user-forms {
       display: block !important;
       margin-top: 18px !important;
     }
-    .wppb-field-error label {
-      color: var(--text-text-danger-default, #d92550);
-    }
   }
 
   .form-submit {
@@ -141,6 +138,9 @@ form.wppb-user-forms {
     width: auto;
     @extend %body-medium;
     color: var(--text-text-body-default, #262626);
+  }
+  .wppb-field-error label {
+    color: var(--text-text-danger-default, #d92550);
   }
 }
 
