@@ -15,7 +15,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   border-radius: 16px;
-  background: var(--fill-fill-surface, #FFF);
+  background: var(--fill-fill-surface, #fff);
   overflow: hidden;
 
   @media (max-width: $desktop) {
@@ -46,6 +46,9 @@
 
   svg {
     margin: 0 auto 40px;
+  }
+  #wppb_form_general_message {
+    display: none;
   }
 }
 
