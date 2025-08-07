@@ -73,11 +73,11 @@ form.wppb-user-forms {
   }
 }
 
-.wppb-form-field {
+form .wppb-form-field {
   position: relative;
   padding-bottom: 16px;
 
-  &.wppb-checkbox {
+  &.wppb-checkbox label {
     top: 0;
   }
 
@@ -88,7 +88,7 @@ form.wppb-user-forms {
   &.wppb-field-error {
     background-color: transparent;
     border: none;
-    padding: 0 !important;
+    padding: 0 0 16px !important;
 
     .wppb-form-error {
       padding-top: 0;
@@ -159,6 +159,7 @@ form.wppb-user-forms {
   @extend %caption-medium;
   color: var(--text-text-danger-default, #d92550);
 }
+
 .wppb-description-delimiter,
 #pass-strength-result {
   display: none !important;
