@@ -14,16 +14,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 16px;
   }
 
   &__title {
     color: var(--text-text-title-default, #1a1a1a);
     @extend %title-large;
+    margin-top: 40px;
+    margin-bottom: 8px;
   }
 
   &__text {
     @extend %body-medium;
     color: var(--text-text-body-default, #262626);
+    margin-bottom: 24px;
   }
+}
+
+.check-email__eamil-wrap {
+  margin-bottom: 40px;
+
+  span {
+    color: var(--text-text-primary-default, #802cd9);
+    font-size: 20px;
+  }
+}
+
+.check-email__btn {
+  @extend %button-large;
 }

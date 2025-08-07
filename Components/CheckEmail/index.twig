@@ -5,15 +5,21 @@
     <h1 class="check-email__title">Проверьте вашу почту</h1>
     
     {% if user_email %}
-      <p class="check-email__text">Мы отправили ссылку подтверждения на <strong>{{ user_email }}</strong></p>
+      <p class="check-email__text">
+      Мы отправили вам письмо с ссылкой.
+      </br>
+      Следуйте инструкциям в письме.</p>
     {% else %}
       <p class="check-email__text">Мы отправили вам ссылку подтверждения</p>
     {% endif %}
-    
+      <div class="check-email__eamil-wrap">
+        <p>Ссылка отправлена на почту:</p>
+        <span>{{ user_email }}</span>
+      </div>
     <div class="resend-box">
       <form method="post">
         <input type="hidden" name="email" value="{{ user_email }}">
-        <button class="check-email__btn button-new" type="submit" name="resend_email">
+        <button class="check-email__btn " type="submit" name="resend_email">
           Отправить письмо повторно
         </button>
       </form>
