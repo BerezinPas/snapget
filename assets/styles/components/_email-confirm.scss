@@ -7,7 +7,7 @@
   justify-content: center;
   text-align: center;
   border-radius: 16px;
-  background: var(--fill-fill-surface, #FFF);
+  background: var(--fill-fill-surface, #fff);
   color: var(--text-text-body-default, #262626);
   @extend %body-medium;
 
@@ -23,15 +23,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  // gap: 16px;
 }
 
 .email-confirm__title {
-  color: var(--text-text-title-default, #1A1A1A);
+  color: var(--text-text-title-default, #1a1a1a);
   @extend %title-large;
+  margin-top: 40px;
 }
 
 .email-confirm__text {
   @extend %body-medium;
   color: var(--text-text-body-default, #262626);
+  margin-top: 8px;
+  margin-bottom: 40px;
 }
