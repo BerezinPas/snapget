@@ -37,12 +37,19 @@
   span {
     color: var(--text-text-primary-default, #802cd9);
     font-size: 20px;
+    margin-top: 4px;
   }
+}
+
+.check-email__form-wrapper {
+  width: 100%;
 }
 
 .check-email__btn {
   width: 100%;
   background-color: var(--text-text-primary-default, #802cd9);
   color: var(--text-text-light-default, #fff);
+  height: 52px;
+  border-radius: 32px;
   @extend %button-large;
 }
