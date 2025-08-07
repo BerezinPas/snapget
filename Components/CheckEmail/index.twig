@@ -16,7 +16,7 @@
         <p>Ссылка отправлена на почту:</p>
         <span>{{ user_email }}</span>
       </div>
-    <div class="check-email__form-wrapper">
+    <div class="check-email__form-wrapper button">
       <form method="post">
         <input type="hidden" name="email" value="{{ user_email }}">
         <button class="check-email__btn " type="submit" name="resend_email">
@@ -24,11 +24,11 @@
         </button>
       </form>
       
-      {% if message %}
+      {# {% if message %}
         <div class="alert {% if 'Ошибка' in message %}alert-error{% else %}alert-success{% endif %}">
           {{ message }}
         </div>
-      {% endif %}
+      {% endif %} #}
     </div>
   </div>
 </section>
