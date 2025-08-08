@@ -127,16 +127,18 @@ add_shortcode('password_reset_form', function() {
         <form method="post" class="password-reset-form wppb-user-forms">
             <input type="hidden" name="key" value="<?= esc_attr($_GET['key']) ?>">
             <input type="hidden" name="login" value="<?= esc_attr($_GET['login']) ?>">
+            <ul>
+                <li class="wppb-form-field pbpl-class">
+                    <label for="new_password">Пароль</label>
+                    <input placeholder="Пароль*" type="password" name="new_password" id="new_password" required>
+                </li>
 
-            <div class="wppb-form-field">
-                <label for="new_password">Пароль</label>
-                <input placeholder="Пароль*" type="password" name="new_password" id="new_password" required>
-            </div>
+                <li class="wppb-form-field pbpl-class">
+                    <label for="confirm_password">Повторите пароль</label>
+                    <input placeholder="Повторите пароль*" type="password" name="confirm_password" id="confirm_password" required>
+                </li>
+            </ul>
 
-            <div class="wppb-form-field">
-                <label for="confirm_password">Повторите пароль</label>
-                <input placeholder="Повторите пароль*" type="password" name="confirm_password" id="confirm_password" required>
-            </div>
 
             <button type="submit" class="submit button">Сохранить новый пароль</button>
         </form>
