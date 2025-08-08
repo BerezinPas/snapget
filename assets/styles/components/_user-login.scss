@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  background: var(--fill-fill-surface, #FFF);
+  background: var(--fill-fill-surface, #fff);
 
   @media (max-width: $tablet) {
     width: 100%;
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
-    color: var(--fill-fill-surface, #FFF);
+    color: var(--fill-fill-surface, #fff);
     gap: 4px;
 
     a {
@@ -29,7 +29,7 @@
       align-items: center;
       gap: 6px;
       flex: 1 0 0;
-      color: var(--text-button-text-default, #802CD9);
+      color: var(--text-button-text-default, #802cd9);
       @extend %button-large;
       text-align: center;
       white-space: nowrap;
@@ -57,4 +57,8 @@
   width: 100%;
   padding: 20px 0;
   margin: 16px 0;
+
+  .login-submit {
+    padding-bottom: 0;
+  }
 }
