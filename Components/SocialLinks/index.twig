@@ -5,6 +5,7 @@
     <div class="social-links__items">
       {% for item in items %}
         <a class="social-links__link" href="{{ item.link }}" target="_blank">
+        {# {% set dark_icon_exists = file_exists(theme.path ~ '/assets/icons/icon-' ~ item.icon ~ '-white.svg') %} #}
           <img class="social-links__icon" src="{{ theme.uri }}/assets/icons/icon-{{ item.icon }}.svg" alt="">
         </a>
       {% endfor %}
