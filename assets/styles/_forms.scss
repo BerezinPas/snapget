@@ -182,6 +182,11 @@ p.wppb-warning {
 
   a {
     color: var(--text-button-text-default, #802cd9) !important;
+
+    &:hover {
+      color: var(--text-button-text-default, #802cd9) !important;
+      text-decoration: none;
+    }
   }
 }
 
