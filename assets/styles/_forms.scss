@@ -171,9 +171,11 @@ form .wppb-form-field {
 
 p.wppb-error,
 p.wppb-warning {
-  margin: 15px 0px 0px;
+  margin: 16px 0px 0px 16px;
   background: none;
   border: none;
+  width: auto;
+  padding: 0;
 
   @extend %caption-medium;
   color: var(--text-text-danger-default, #d92550) !important;
