@@ -1,6 +1,6 @@
 .wpcf7-form,
 form.wppb-user-forms,
-.wppb-user-forms {
+div.wppb-user-forms {
   width: 100%;
 
   input[type="text"],
@@ -169,11 +169,17 @@ form .wppb-form-field {
   margin-bottom: 16px;
 }
 
-.wppb-error,
-.wppb-warning {
-  margin-bottom: 16px;
+p.wppb-error,
+p.wppb-warning {
+  margin: 15px 0px 0px;
+  background: none;
+  border: none;
   @extend %caption-medium;
-  color: var(--text-text-danger-default, #d92550);
+  color: var(--text-text-danger-default, #d92550) !important;
+
+  a {
+    color: var(--text-button-text-default, #802cd9) !important;
+  }
 }
 
 .wppb-description-delimiter,
