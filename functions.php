@@ -29,11 +29,6 @@ add_action('after_setup_theme', function () {
     // Make theme available for translation.
     // Translations can be filed in the /languages/ directory.
     load_theme_textdomain('flynt', get_template_directory() . '/languages');
-
-
-    // delete
-    add_theme_support('html5', ['comment-form', 'comment-list']);
-    add_theme_support('comments');
 });
 
 add_filter('gettext', function ($translated_text){
@@ -146,14 +141,14 @@ add_filter('wppb_register_redirect', function($redirect_url) {
     return $redirect_url;
 });
 
-// Фикс для функции moveForm
-add_filter('comment_reply_link', function($link, $args, $comment) {
-    return str_replace(
-        "onclick='return addComment.moveForm", 
-        "onclick='return addComment.moveForm", 
-        $link
-    );
-}, 10, 3);
+// // Фикс для функции moveForm
+// add_filter('comment_reply_link', function($link, $args, $comment) {
+//     return str_replace(
+//         "onclick='return addComment.moveForm",
+//         "onclick='return addComment.moveForm",
+//         $link
+//     );
+// }, 10, 3);
 
 
 
