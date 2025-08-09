@@ -24,17 +24,17 @@ add_action('user_register', function ($user_id) {
 
 
 // Complete registration redirects
-add_action('template_redirect', function () {
-    $user_id = get_current_user_id();
-    $telegram = get_field('telegram', 'user_' . $user_id);
+// add_action('template_redirect', function () {
+//     $user_id = get_current_user_id();
+//     $telegram = get_field('telegram', 'user_' . $user_id);
 
-    if (is_page('profile') && is_user_logged_in() && $telegram == '') {
-        wp_redirect(home_url('/complete-registration/'));
-        exit();
-    }
+//     if (is_page('profile') && is_user_logged_in() && $telegram == '') {
+//         wp_redirect(home_url('/complete/'));
+//         exit();
+//     }
 
-    if (is_page('complete-registration') && is_user_logged_in() && $telegram !== '') {
-        wp_redirect(home_url('/profile/'));
-        exit();
-    }
-});
+//     if (is_page('complete-registration') && is_user_logged_in() && $telegram !== '') {
+//         wp_redirect(home_url('/profile/'));
+//         exit();
+//     }
+// });
