@@ -132,14 +132,14 @@ add_action( 'template_redirect', function (){
 
 
 
-// Редирект после регистации
-add_filter('wppb_register_redirect', function($redirect_url) {
-    if (isset($_POST['email'])) {
-        $email = urlencode(sanitize_email($_POST['email']));
-        return home_url('/check-email/').'?email='.$email.'&new_user=1';
-    }
-    return $redirect_url;
-});
+// // Редирект после регистации
+// add_filter('wppb_register_redirect', function($redirect_url) {
+//     if (isset($_POST['email'])) {
+//         $email = urlencode(sanitize_email($_POST['email']));
+//         return home_url('/check-email/').'?email='.$email.'&new_user=1';
+//     }
+//     return $redirect_url;
+// });
 
 // // Фикс для функции moveForm
 // add_filter('comment_reply_link', function($link, $args, $comment) {
