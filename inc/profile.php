@@ -33,7 +33,7 @@ add_action('user_register', function ($user_id) {
 //         exit();
 //     }
 
-//     if (is_page('complete-registration') && is_user_logged_in() && $telegram !== '') {
+//     if (is_page('complete') && is_user_logged_in() && $telegram !== '') {
 //         wp_redirect(home_url('/profile/'));
 //         exit();
 //     }
