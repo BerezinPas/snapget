@@ -6,7 +6,8 @@ import FullReload from "vite-plugin-full-reload";
 import fs from "fs";
 
 // const wordpressHost = 'http://127.0.0.1:88/blog/'
-const wordpressHost = "https://test.snapget.ru/";
+const wordpressHost = "http://127.0.0.1:88/blog/";
+// const wordpressHost = "https://test.snapget.ru/";
 
 const dest = "./dist";
 const entries = [
