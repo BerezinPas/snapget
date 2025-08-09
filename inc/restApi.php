@@ -7,11 +7,17 @@ add_action('rest_api_init', function () {
       'methods' => 'POST',
       'permission_callback' => '__return_true',
       'callback' => function ($request) {
-        $params = $request->get_params();
-        $user_id = $params['user_id'];
-        $post_id = $params['post_id'];
+        // $params = $request->get_params();
+        // $user_id = $params['user_id'];
+        // $post_id = $params['post_id'];
+        $user_id = (int) $request->get_param('user_id');
+        $post_id = (int) $request->get_param('post_id');
 
         $favourites = get_field('favourites', 'user_' . $user_id);
+
+        if (!$favourites || !is_array($favourites)) {
+            $favourites = [];
+        }
 
         if (in_array($post_id, $favourites)) {
             $favourites = array_diff($favourites, [$post_id]);
