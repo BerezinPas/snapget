@@ -118,18 +118,18 @@ add_action('Flynt/afterRegisterComponents', function () {
             //         ]
             //     ]
             // ],
-            [
-                'label' => 'Выберите стикер',
-                'name' => 'sticker_type',
-                'type' => 'select',
-                'choices' => [
-                    'empty' => 'не отображать',
-                    'pro' => 'Pro',
-                    'expert' => 'Expert',
-                ],
-                'default_value' => 'empty',
+            // [
+            //     'label' => 'Выберите стикер',
+            //     'name' => 'sticker_type',
+            //     'type' => 'select',
+            //     'choices' => [
+            //         'empty' => 'не отображать',
+            //         'pro' => 'Pro',
+            //         'expert' => 'Expert',
+            //     ],
+            //     'default_value' => 'empty',
 
-            ],
+            // ],
 
         ],
         'location' => [
