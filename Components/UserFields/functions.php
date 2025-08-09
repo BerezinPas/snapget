@@ -41,7 +41,7 @@ add_action('acf/save_post', function($post_id) {
         // Проверяем параметр updated в URL
         if (isset($_GET['updated']) && $_GET['updated'] === 'true') {
             // Определяем URL для редиректа
-            $redirect_url = home_url('/user-profile/');
+            $redirect_url = home_url('/profile/');
             wp_redirect($redirect_url);
             exit;
         }

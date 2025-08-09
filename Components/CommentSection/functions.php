@@ -1,20 +1,20 @@
 <?php
 
-namespace Flynt\Components\CommentSection;
+// namespace Flynt\Components\CommentSection;
 
 use Flynt\Utils\Options;
 
 add_filter('Flynt/addComponentData?name=CommentSection', function ($data) {
     $postId = get_the_ID();
     $data['post'] = \Timber\Timber::get_post($postId);
-    
+
     $data['comments'] = get_comments([
         'post_id' => $postId,
         'status' => 'approve',
         'order' => 'ASC',
         'hierarchical' => 'threaded'
     ]);
-    
+
     $data['options'] = Options::getTranslatable('CommentSection');
     return $data;
 });
@@ -25,19 +25,19 @@ add_filter('get_avatar', function($avatar_html, $id_or_email, $size, $default, $
     if ($id_or_email instanceof WP_Comment && !$id_or_email->user_id) {
         return $avatar_html;
     }
-    
-    $user_id = is_numeric($id_or_email) 
-        ? $id_or_email 
+
+    $user_id = is_numeric($id_or_email)
+        ? $id_or_email
         : email_exists($id_or_email);
-    
+
     if ($user_id) {
         $avatar_data = get_field('avatar', 'user_' . $user_id);
-        
+
         // Обработка разных форматов ACF
-        $avatar_url = is_array($avatar_data) 
-            ? ($avatar_data['url'] ?? '') 
+        $avatar_url = is_array($avatar_data)
+            ? ($avatar_data['url'] ?? '')
             : $avatar_data;
-        
+
         if ($avatar_url) {
             $class = $args['class'] ?? 'comment-avatar-img';
             return sprintf(
@@ -50,7 +50,7 @@ add_filter('get_avatar', function($avatar_html, $id_or_email, $size, $default, $
             );
         }
     }
-    
+
     return $avatar_html;
 }, 10, 6);
 
