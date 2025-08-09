@@ -44,6 +44,10 @@ add_action('rest_api_init', function () {
 
             $favourites = get_field('favourites', 'user_' . $user_id);
 
+            if (!$favourites || !is_array($favourites)) {
+                $favourites = [];
+            }
+
             if (in_array($post_id, $favourites)) {
                 return true;
             } else {
